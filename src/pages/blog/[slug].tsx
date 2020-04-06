@@ -3,14 +3,17 @@ import matter from "gray-matter";
 import fetch from 'isomorphic-unfetch';
 import ReactMarkdown from 'react-markdown'
 import Layout from '../../components/Layout';
+import PageContainer from '../../components/PageContainer';
 
 const Post = ({ post, data}) => {
   // const router = useRouter();
 
   return (
     <Layout>
-      <h1>{data.title}</h1>
-      <ReactMarkdown source={post} />
+      <PageContainer>
+        <h1>{data.title}</h1>
+        <ReactMarkdown source={post} />
+      </PageContainer>
     </Layout>
   );
 }
