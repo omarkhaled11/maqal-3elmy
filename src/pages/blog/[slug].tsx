@@ -1,46 +1,65 @@
-// import { useRouter } from 'next/router';
-import matter from "gray-matter";
-import fetch from 'isomorphic-unfetch';
+import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown'
 import Layout from '../../components/Layout';
 import PageContainer from '../../components/PageContainer';
+const glob = require('glob');
 
-const Post = ({ post, data}) => {
-  // const router = useRouter();
-
+const Post = ({ frontmatter, markdownBody}) => {
   return (
     <Layout>
       <PageContainer>
-        <h1>{data.title}</h1>
-        <ReactMarkdown source={post} />
+        <h1>{frontmatter.title}</h1>
+        <img
+            src={frontmatter.hero_image}
+            width={700}
+            alt={frontmatter.title}
+          />
+        <ReactMarkdown source={markdownBody} />
       </PageContainer>
     </Layout>
   );
 }
 
-export const getStaticPaths = async () => {
-  const res = await fetch('http://localhost:3000/api/posts-info')
-  const posts = await res.json()
-  const paths = posts.map(post => `/blog/${post.slug}`);
+// This gets called at build time
+export async function getStaticProps({ ...ctx }) {
+  const { slug } = ctx.params; // params contains the post `slug`.
+  
+  const config = await import(`../../data/config.json`)
+  // If the route is /blog/post-title, slug is post-title
+  const rawMarkdown = await import(`../../posts/${slug}.md`)
+
+  // parse markdown data, not to html yet
+  const parsedMarkdown = matter(rawMarkdown.default);
+  
+  return {
+    props: {
+      siteTitle: config.title,
+      frontmatter: parsedMarkdown.data,
+      markdownBody: parsedMarkdown.content,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  //get all .md files in the posts dir
+  const posts = glob.sync('src/posts/**/*.md')
+
+  //remove path and extension to leave filename only
+  const postsSlugs = posts.map(file =>
+    file
+      .split('/')[2]
+      .replace(/ /g, '-')
+      .slice(0, -3)
+      .trim()
+  )
+
+  // create paths with `slug` param
+  const paths = postsSlugs.map(slug => `/blog/${slug}`)
 
   return {
     paths,
-    fallback: false
-  };
-};
-
-// This also gets called at build time
-export async function getStaticProps({ params }) {
-  // params contains the post `slug`.
-  // If the route is like /posts/post-title, then params.slug is post-title
-  const res = await fetch(`http://localhost:3000/api/post/${params.slug}`)
-  const markdownWithMetadata = await res.json()
-
-  const parsedMarkdown = matter(markdownWithMetadata.body);
-  const { data, content } = parsedMarkdown;
-  
-  // Pass post data to the page via props
-  return { props: { post: content, data } }
+    fallback: false,
+  }
 }
 
 export default Post;
