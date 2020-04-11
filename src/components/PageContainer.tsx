@@ -16,8 +16,20 @@ const Container = styled.div`
 
 const Block = styled.div`
   max-width: 700px;
-  /* margin-left: 10px;
-  margin-right: 10px; */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 450px) {
+    max-width: 400px;
+    img {
+      max-width: 400px;
+    }
+  }
+  img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 700px;
+  }
   font-size: ${({ theme }) => theme.fonts.medium};
 `
 
