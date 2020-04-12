@@ -22,25 +22,25 @@ const Home = ({ slugs }) => {
       <Title>My Blog</Title>
       <br />
       <ul>
-        {
+        {/* {
           slugs.map(slug => (
             <PostLink slug={slug} />
           ))
-        }
+        } */}
       </ul>
     </Layout>
   );
 }
 
-export const getStaticProps = async (ctx) => {
-  const res = await fetch('http://localhost:3000/api/posts-info')
-  const posts = await res.json()
+// export const getStaticProps = async (ctx) => {
+//   const res = await fetch('http://localhost:3000/api/posts-info')
+//   const posts = await res.json()
 
-  return {
-    props: {
-      slugs: posts.map(post => post.slug),
-    }
-  };
-};
+//   return {
+//     props: {
+//       slugs: posts.map(post => post.slug),
+//     }
+//   };
+// };
 
 export default Home;

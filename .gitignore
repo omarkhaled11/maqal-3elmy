@@ -3,4 +3,5 @@ src/.next
 .next
 .env
 src/out/
+out
 .DS_Store
