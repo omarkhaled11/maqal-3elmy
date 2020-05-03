@@ -5,12 +5,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start -p $PORT",
     "type-check": "tsc",
     "export": "next export",
-    "deploy": "yarn build && yarn export",
-    "heroku-postbuild": "yarn delpoy"
+    "deploy": "yarn build && yarn export"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^13.4.0",
