@@ -1,46 +1,38 @@
 import Layout from '../components/Layout';
-import Link from 'next/link';
 import styled from 'styled-components'
-import fetch from 'isomorphic-unfetch';
+import ArticleCard from '../components/ArticleCard';
+import initContentfulService from '../service/contentful';
 
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.primary};
 `
 
-const PostLink = props => (
-  <li>
-    <Link href="/blog/[slug]" as={`/blog/${props.slug}`}>
-      <a>{props.slug}</a>
-    </Link>
-  </li>
-);
-
-const Home = ({ slugs }) => {
+const Home = ({ articles }) => {
   return (
     <Layout>
       <Title>My Blog</Title>
       <br />
       <ul>
-        {/* {
-          slugs.map(slug => (
-            <PostLink slug={slug} />
+        {
+          articles.map(article => (
+            <ArticleCard article={article} />
           ))
-        } */}
+        }
       </ul>
     </Layout>
   );
 }
 
-// export const getStaticProps = async (ctx) => {
-//   const res = await fetch('http://localhost:3000/api/posts-info')
-//   const posts = await res.json()
+export const getStaticProps = async (ctx) => {
+  const client = initContentfulService();
+  const articles = await client.getArticles();
 
-//   return {
-//     props: {
-//       slugs: posts.map(post => post.slug),
-//     }
-//   };
-// };
+  return {
+    props: {
+      articles,
+    }
+  };
+};
 
 export default Home;

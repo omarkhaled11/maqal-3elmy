@@ -1,64 +1,52 @@
 import ReactMarkdown from 'react-markdown'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import Layout from '../../components/Layout';
 import PageContainer from '../../components/PageContainer';
-const glob = require('glob');
+import initContentfulService from '../../service/contentful';
 
-const Post = () => {
+const Post = ({ article }) => {
+  const { title, body } = article;
+  console.log('MD body: ', body)
   return (
     <Layout>
       <PageContainer>
-        {/* <h1>{frontmatter.title}</h1>
-        <img
+        <h1>{title}</h1>
+        {/* <img
             src={frontmatter.hero_image}
             width={700}
             alt={frontmatter.title}
-          />
-        <ReactMarkdown source={markdownBody} /> */}
+          /> */}
+          <div dangerouslySetInnerHTML={{ __html: body}} />
       </PageContainer>
     </Layout>
   );
 }
 
 // This gets called at build time
-// export async function getStaticProps({ ...ctx }) {
-//   const { slug } = ctx.params; // params contains the post `slug`.
+export async function getStaticProps({ ...ctx }) {
+  const client = initContentfulService();
+  const { slug } = ctx.params; // params contains the post `slug`.
+  const article = await client.getArticleBySlug(slug);
 
-//   const config = await import(`../../data/config.json`)
-//   // If the route is /blog/post-title, slug is post-title
-//   const rawMarkdown = await import(`../../posts/${slug}.md`)
+  return {
+    props: {
+      article: {
+        ...article,
+        body: documentToHtmlString(article.body),
+      },
+    },
+  }
+}
 
-//   // parse markdown data, not to html yet
-//   // const parsedMarkdown = matter(rawMarkdown.default);
+export async function getStaticPaths() {
+  const client = initContentfulService();
+  const slugs = await client.getSlugs();
+  const paths = slugs.map(slug => `/blog/${slug}`)  // create paths with `slug` param
 
-//   return {
-//     props: {
-//       siteTitle: config.title,
-//       // frontmatter: parsedMarkdown.data,
-//       // markdownBody: parsedMarkdown.content,
-//     },
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   //get all .md files in the posts dir
-//   const posts = glob.sync('src/posts/**/*.md')
-
-//   //remove path and extension to leave filename only
-//   const postsSlugs = posts.map(file =>
-//     file
-//       .split('/')[2]
-//       .replace(/ /g, '-')
-//       .slice(0, -3)
-//       .trim()
-//   )
-
-//   // create paths with `slug` param
-//   const paths = postsSlugs.map(slug => `/blog/${slug}`)
-
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
 export default Post;
