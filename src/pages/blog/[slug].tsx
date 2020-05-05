@@ -5,16 +5,11 @@ import initContentfulService from '../../service/contentful';
 
 const Post = ({ article }) => {
   const { title, body } = article;
-  console.log('MD body: ', body)
+
   return (
     <Layout>
       <PageContainer>
         <h1>{title}</h1>
-        {/* <img
-            src={frontmatter.hero_image}
-            width={700}
-            alt={frontmatter.title}
-          /> */}
           <div dangerouslySetInnerHTML={{ __html: body}} />
       </PageContainer>
     </Layout>

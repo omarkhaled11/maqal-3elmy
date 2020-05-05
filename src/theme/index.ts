@@ -33,4 +33,8 @@ export const theme = {
     medium: '1.25rem',
     small: '1rem',
   },
+  dimensions: {
+    imageWidth: '15rem',
+    imageHeight: '15rem',
+  }
 };

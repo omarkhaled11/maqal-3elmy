@@ -2,27 +2,25 @@ import Layout from '../components/Layout';
 import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard';
 import initContentfulService from '../service/contentful';
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import { theme } from '../theme';
 
 const Home = ({ articles }) => {
   return (
     <Layout>
-      <Title>My Blog</Title>
-      <br />
-      <ul>
+      <Container>
         {
           articles.map(article => (
             <ArticleCard article={article} />
           ))
         }
-      </ul>
+      </Container>
     </Layout>
   );
 }
+
+const Container = styled.div`
+  padding: ${theme.metrics.m3};
+`
 
 export const getStaticProps = async (ctx) => {
   const client = initContentfulService();

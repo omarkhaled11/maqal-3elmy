@@ -13,10 +13,6 @@ const Header = () => (
   </Container>
 );
 
-const linkStyle = {
-  marginRight: 15
-};
-
 const Container = styled.div`
   padding: ${theme.metrics.m2};
   margin-bottom: ${theme.metrics.m2};
