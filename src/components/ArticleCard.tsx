@@ -9,7 +9,7 @@ const ArticleCard = ({ article }) => {
     <Link href="/blog/[slug]" as={`/blog/${slug}`}>
       <CardContainer>
         <ImageBackground />
-        <CardTitle>{title} asdasdasd asdasdasd</CardTitle>
+        <CardTitle>{title}</CardTitle>
       </CardContainer>
     </Link>
   );
