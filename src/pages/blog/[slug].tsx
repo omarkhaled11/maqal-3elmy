@@ -1,4 +1,3 @@
-import ReactMarkdown from 'react-markdown'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import Layout from '../../components/Layout';
 import PageContainer from '../../components/PageContainer';
