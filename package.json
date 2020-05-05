@@ -16,10 +16,8 @@
     "contentful": "^7.14.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.3.4",
-    "raw-loader": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown": "^4.3.1",
     "styled-components": "^5.0.1",
     "webpack": "^4.42.1"
   },
