@@ -9,8 +9,9 @@ const Post = ({ article }) => {
   return (
     <Layout>
       <PageContainer>
-        <h1>{title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: body}} />
+        <h1 dir={'rtl'} >{title}</h1>
+        <br /><br />
+        <div dangerouslySetInnerHTML={{ __html: body }} dir={'rtl'} />
       </PageContainer>
     </Layout>
   );

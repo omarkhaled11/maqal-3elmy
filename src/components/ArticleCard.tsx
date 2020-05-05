@@ -22,8 +22,8 @@ const CardContainer = styled.a`
   padding-bottom: ${theme.metrics.m2};
   border: 1px solid ${theme.colors.border};
   width: ${theme.dimensions.imageWidth};
-  margin-right: ${theme.metrics.m2};
-  margin-bottom: ${theme.metrics.m2};
+  margin-right: ${theme.metrics.m3};
+  margin-bottom: ${theme.metrics.m3};
   word-wrap: break-word;
   :hover {
     cursor: pointer;

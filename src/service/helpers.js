@@ -3,7 +3,7 @@ export const mapArticle = (item) => {
   return {
     ...fields,
     author: {
-      ...fields['author'].fields,
+      ...fields['author']?.fields,
     },
   }
 }

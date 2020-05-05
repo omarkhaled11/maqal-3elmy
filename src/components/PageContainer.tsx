@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '../theme';
 
 const PageContainer = ({ children }) => (
   <Container>
@@ -12,6 +13,7 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
+  padding-bottom: ${theme.metrics.m4};
 `
 
 const Block = styled.div`

@@ -19,7 +19,10 @@ const Home = ({ articles }) => {
 }
 
 const Container = styled.div`
+  display: flex;
   padding: ${theme.metrics.m3};
+  flex-direction: row;
+  flex-wrap: wrap;
 `
 
 export const getStaticProps = async (ctx) => {
