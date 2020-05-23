@@ -22,6 +22,7 @@ export const theme = {
   colors: {
     primary: '#464646',
     secondary: '#464F4F',
+    themeRed: '#E94B3C',
     text: 'black',
     border: '#eee',
     background: 'white',
@@ -31,6 +32,8 @@ export const theme = {
     m2: '1rem',
     m3: '2rem',
     m4: '3rem',
+    m5: '4rem',
+    m6: '5rem',
     navbarHeight: '80px',
     sideMargin: '6rem',
   },

@@ -25,7 +25,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   height: ${theme.metrics.navbarHeight};
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
 `;
 
 const MenuButton = styled.div`

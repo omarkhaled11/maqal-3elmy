@@ -6,6 +6,7 @@ import Header from './Header';
 const LayoutContainer = styled.div`
   display: flex;
   flex: 1;
+  flex-direction: column;
   margin-right: ${theme.metrics.sideMargin};
   margin-left: ${theme.metrics.sideMargin};
 `
