@@ -5,14 +5,23 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0px;
     border: 0px;
     margin: 0px;
-    font-family: 'Roboto';
+    direction: rtl;
+    @font-face {
+      font-family: 'Tajawal-Regular';
+      src: url('/fonts/Tajawal-Regular.ttf');
+    }
+    @font-face {
+      font-family: 'Tajawal-Bold';
+      src: url('/fonts/Tajawal-Bold.ttf');
+    }
+    font-family: 'Tajawal-Regular';
   }
 `;
 
 export const theme = {
   colors: {
-    primary: '#0070f3',
-    secondary: '#7ac2ce',
+    primary: '#464646',
+    secondary: '#464F4F',
     text: 'black',
     border: '#eee',
     background: 'white',
@@ -22,7 +31,8 @@ export const theme = {
     m2: '1rem',
     m3: '2rem',
     m4: '3rem',
-    navbarHeight: '50px',
+    navbarHeight: '80px',
+    sideMargin: '6rem',
   },
   fonts: {
     h1: '4rem',
@@ -32,6 +42,7 @@ export const theme = {
     large: '1.5rem',
     medium: '1.25rem',
     small: '1rem',
+    bold: 'Tajawal-Bold',
   },
   dimensions: {
     imageWidth: '15rem',
