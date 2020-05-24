@@ -9,6 +9,7 @@ const Home = ({ articles }) => {
   return (
     <Layout>
       <Jumbotron />
+      {/* <ArticleList /> */}
         {
           articles.map(article => (
             <ArticleCard article={article} />

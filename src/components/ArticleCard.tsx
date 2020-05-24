@@ -8,8 +8,8 @@ const ArticleCard = ({ article }) => {
   return (
     <Link href="/blog/[slug]" as={`/blog/${slug}`}>
       <CardContainer>
-        <ImageBackground />
-        <CardTitle>{title}</CardTitle>
+        <Discipline>الذكاء الاصطناعي</Discipline>
+        <Title>{title}</Title>
       </CardContainer>
     </Link>
   );
@@ -19,26 +19,36 @@ const CardContainer = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-bottom: ${theme.metrics.m2};
-  border: 1px solid ${theme.colors.border};
+  padding: ${theme.metrics.m2};
+  border: 1px solid ${theme.colors.secondary};
   width: ${theme.dimensions.imageWidth};
-  margin-right: ${theme.metrics.m3};
   margin-bottom: ${theme.metrics.m3};
   word-wrap: break-word;
   :hover {
     cursor: pointer;
+    border-color: ${theme.colors.themeRed};
+    span {
+      color: ${theme.colors.themeRed};
+    }
   };
 `
 
-const CardTitle = styled.p`
-  padding: ${theme.metrics.m1};
-  font-size: ${theme.fonts.large};
+const Title = styled.span`
+  font-size: ${theme.fonts.medium};
+  color: ${theme.colors.primary};
 `
 
-const ImageBackground = styled.div`
-  height: ${theme.dimensions.imageHeight};
-  width: ${theme.dimensions.imageWidth};
-  background-image: url("https://image.shutterstock.com/image-photo/forest-road-under-sunset-sunbeams-260nw-228722404.jpg");
+const Discipline = styled.span`
+  padding-bottom: ${theme.metrics.m1};
+  font-size: ${theme.fonts.small};
+  font-family: ${theme.fonts.bold};
+  color: ${theme.colors.primary};
 `
+
+// const ImageBackground = styled.div`
+//   height: ${theme.dimensions.imageHeight};
+//   width: ${theme.dimensions.imageWidth};
+//   background-image: url("https://image.shutterstock.com/image-photo/forest-road-under-sunset-sunbeams-260nw-228722404.jpg");
+// `
 
 export default ArticleCard;
