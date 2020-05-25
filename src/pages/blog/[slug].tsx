@@ -1,9 +1,12 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import styled from 'styled-components';
+import moment from 'moment';
 import Layout from '../../components/Layout';
 import PageContainer from '../../components/PageContainer';
 import initContentfulService from '../../service/contentful';
 import { theme } from '../../theme';
+
+moment.locale('ar');
 
 const Post = ({ article }) => {
   const { title, body, readingTimeInMinutes, discipline, authors, publishDate } = article;
@@ -30,7 +33,7 @@ const Post = ({ article }) => {
             <InfoValue>{authors.filter(author => author.isLinguistic).map(author => author.name)}</InfoValue>
           </InfoRow>
           <InfoRow>
-            <InfoLabel>تحريراً في {publishDate}</InfoLabel>
+            <InfoLabel>تحريراً في {moment(publishDate).format('LL')}</InfoLabel>
           </InfoRow>
         </ArticleHeader>
         <div style={{ flex: 1 }} />
