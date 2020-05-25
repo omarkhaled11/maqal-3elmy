@@ -14,6 +14,21 @@ const Post = ({ article }) => {
         <ArticleHeader>
           <DisciplineText>الذكاء الاصطناعي</DisciplineText>
           <TitleText>{title}</TitleText>
+          <InfoRow>
+            <InfoLabel>مدة القراءة:</InfoLabel>
+            <InfoValue> ٥ دقائق </InfoValue>
+          </InfoRow>
+          <InfoRow>
+            <InfoLabel>المحررين:</InfoLabel>
+            <InfoValue> جون دانيال/فادي مدحت </InfoValue>
+          </InfoRow>
+          <InfoRow>
+            <InfoLabel>المدققين اللغويين:</InfoLabel>
+            <InfoValue> علا زاد</InfoValue>
+          </InfoRow>
+          <InfoRow>
+            <InfoLabel>تحريراً في ٢٤ ابريل ٢٠٢٠</InfoLabel>
+          </InfoRow>
         </ArticleHeader>
         <div style={{ flex: 1 }} />
       </ArticleHeaderContainer>
@@ -77,6 +92,25 @@ const BodyContainer = styled.div`
     font-size: ${theme.fonts.medium};
     line-height: ${theme.metrics.baseMargin};
   }
+`;
+
+const InfoRow = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin-top: ${theme.metrics.m3};
+`;
+
+const InfoLabel = styled.span`
+  font-size: ${theme.fonts.small};
+  color: ${theme.colors.primary};
+`;
+
+const InfoValue = styled.span`
+  font-family: ${theme.fonts.bold};
+  font-size: ${theme.fonts.small};
+  color: ${theme.colors.primary};
+  padding-right: ${theme.metrics.m1};
 `;
 
 // This gets called at build time
