@@ -6,28 +6,31 @@ import initContentfulService from '../../service/contentful';
 import { theme } from '../../theme';
 
 const Post = ({ article }) => {
-  const { title, body } = article;
+  const { title, body, readingTimeInMinutes, discipline, authors, publishDate } = article;
 
   return (
     <Layout>
       <ArticleHeaderContainer>
         <ArticleHeader>
-          <DisciplineText>الذكاء الاصطناعي</DisciplineText>
+          <DisciplineText>{discipline.disciplineName}</DisciplineText>
           <TitleText>{title}</TitleText>
           <InfoRow>
             <InfoLabel>مدة القراءة:</InfoLabel>
-            <InfoValue> ٥ دقائق </InfoValue>
+            <InfoValue> {readingTimeInMinutes} دقائق </InfoValue>
           </InfoRow>
           <InfoRow>
             <InfoLabel>المحررين:</InfoLabel>
-            <InfoValue> جون دانيال/فادي مدحت </InfoValue>
+            <InfoValue>
+              {authors.filter(author => !author.isLinguistic)
+                .map((author, index) => index === authors.length ? author.name : `${author.name} /`)}
+             </InfoValue>
           </InfoRow>
           <InfoRow>
             <InfoLabel>المدققين اللغويين:</InfoLabel>
-            <InfoValue> علا زاد</InfoValue>
+            <InfoValue>{authors.filter(author => author.isLinguistic).map(author => author.name)}</InfoValue>
           </InfoRow>
           <InfoRow>
-            <InfoLabel>تحريراً في ٢٤ ابريل ٢٠٢٠</InfoLabel>
+            <InfoLabel>تحريراً في {publishDate}</InfoLabel>
           </InfoRow>
         </ArticleHeader>
         <div style={{ flex: 1 }} />
@@ -82,7 +85,7 @@ const BodyContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: auto;
   padding-right: ${theme.metrics.m5};
   padding-left: ${theme.metrics.m5};

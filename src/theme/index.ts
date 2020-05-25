@@ -35,6 +35,7 @@ export const theme = {
     m5: '4rem',
     m6: '5rem',
     baseMargin: '2.5rem',
+    smallMargin: '1.5rem',
     navbarHeight: '80px',
     sideMargin: '6rem',
   },
