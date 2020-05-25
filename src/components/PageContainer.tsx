@@ -3,21 +3,20 @@ import { theme } from '../theme';
 
 const PageContainer = ({ children }) => (
   <Container>
-    <Block>
-      {children}
-    </Block>
+    {children}
   </Container>
 );
 
 const Container = styled.div`
+  border: 1px solid black;
   display: flex;
   flex: 1;
   justify-content: center;
-  padding-bottom: ${theme.metrics.m4};
-`
-
-const Block = styled.div`
-  max-width: 700px;
+  padding-right: ${theme.metrics.m5};
+  padding-left: ${theme.metrics.m5};
+  padding-top: ${theme.metrics.m3};
+  padding-bottom: ${theme.metrics.m5};
+  margin-top: ${theme.metrics.m5};
   overflow: auto;
   display: flex;
   flex-direction: column;

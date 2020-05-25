@@ -6,7 +6,11 @@ const LogoSvg = require("../svg/logo.svg");
 
 const Header = () => (
   <Container>
-    <LogoSvg height={70} width={85} />
+    <Link href="/">
+      <a>
+        <LogoSvg height={70} width={85} />
+      </a>
+    </Link>
     <MenuButton>
       <MenuText>
         القائمة
@@ -18,14 +22,17 @@ const Header = () => (
 const Container = styled.div`
   padding-top: ${theme.metrics.m2};
   padding-bottom: ${theme.metrics.m2};
-  padding-right: ${theme.metrics.sideMargin};
-  padding-left: ${theme.metrics.sideMargin};
+  margin-right: ${theme.metrics.sideMargin};
+  margin-left: ${theme.metrics.sideMargin};
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: ${theme.metrics.navbarHeight};
-  /* border-bottom: 1px solid black; */
+  -moz-box-shadow: 0 25px 22px -45px rgba(233, 75, 60, 0.8);
+  -webkit-box-shadow: 0 25px 22px -45px rgba(233, 75, 60, 0.8);
+  box-shadow: 0 30px 48px -50px rgba(233, 75, 60, 0.8);
+  /* margin-bottom: ${theme.metrics.sideMargin}; */
 `;
 
 const MenuButton = styled.div`
