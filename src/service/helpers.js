@@ -12,9 +12,9 @@ export const mapArticle = (item) => {
 const getAuthors = (authors) => {
   const mappedAuthors = [];
   for (const key in authors) {
-    mappedAuthors.push(authors[key].fields);
+    mappedAuthors.push(authors[key]?.fields);
   }
-  return mappedAuthors;
+  return mappedAuthors.filter(a => a);
 }
 
 export const mapSlug = (item) => {
