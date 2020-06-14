@@ -1,0 +1,31 @@
+@import '../theme/globals.scss';
+
+.divider {
+  position: relative;
+  margin: $m3 0;
+  height: 5em;
+  text-align: center;
+  line-height: 1em;
+  color: #464646;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #464646;
+    content: '';
+  }
+
+  &:after {
+    display: inline-block;
+    position: relative;
+    background-color: #fcfcfa;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    font-family: $bold;
+    font-size: $h2;
+    content: attr(data-content);
+  }
+}

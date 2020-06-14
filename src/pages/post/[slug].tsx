@@ -1,12 +1,10 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import styled from 'styled-components';
 import moment from 'moment';
-import Layout from '../../components/Layout';
-import PageContainer from '../../components/PageContainer';
-import initContentfulService from '../../service/contentful';
-import { theme } from '../../theme';
 
-import styles from './blog.module.scss';
+import Layout from '../../components/Layout';
+import initContentfulService from '../../service/contentful';
+
+import styles from './post.module.scss';
 
 moment.locale('ar');
 

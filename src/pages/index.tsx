@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import ArticleCard from '../components/ArticleCard';
 import Jumbotron from '../components/home/Jumbotron';
 import initContentfulService from '../service/contentful';
+import Divider from '../components/Divider';
 
 import styles from './index.module.scss';
 
@@ -12,7 +13,7 @@ const Home = ({ articles }) => {
         <Jumbotron />
       </div>
       <div>
-        <hr className={styles.divider} data-content="صدر حديثا"></hr>
+        <Divider text="صدر حديثا" />
         <div className={styles.articles}>
           {/* <ArticleList /> */}
           {articles.map((article) => (
