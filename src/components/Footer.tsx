@@ -11,10 +11,18 @@ const Footer = () => {
         </div>
         <div className={styles.links}>
           <nav className={styles.nav}>
-            <Link href="/">من نحن</Link>
-            <Link href="/">عن محررينا</Link>
-            <Link href="/">اتصل بنا</Link>
-            <Link href="/">سندات</Link>
+            <Link href="/">
+              <a>من نحن</a>
+            </Link>
+            <Link href="/">
+              <a>عن محررينا</a>
+            </Link>
+            <Link href="/">
+              <a>اتصل بنا</a>
+            </Link>
+            <Link href="/">
+              <a>سندات</a>
+            </Link>
           </nav>
           <div className={styles.social_media_container}>
             <Link href="/">

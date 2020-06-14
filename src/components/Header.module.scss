@@ -1,0 +1,39 @@
+@import '../theme/globals.scss';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: $sideMargin;
+  margin-left: $sideMargin;
+  padding-top: $m2;
+  padding-bottom: $m2;
+  height: $navbarHeight;
+  -moz-box-shadow: 0 25px 22px -45px rgba(233, 75, 60, 0.8);
+  -webkit-box-shadow: 0 25px 22px -45px rgba(233, 75, 60, 0.8);
+  box-shadow: 0 30px 48px -50px rgba(233, 75, 60, 0.8);
+}
+
+.logo {
+  width: 6rem;
+  height: 6rem;
+}
+
+.menu_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $secondary;
+  padding-right: $m3;
+  padding-left: $m3;
+  height: $m4;
+}
+
+.menu_button_text {
+  margin-top: $m1;
+  font-size: $large;
+  font-family: $bold;
+  text-align: center;
+  color: $secondary;
+}

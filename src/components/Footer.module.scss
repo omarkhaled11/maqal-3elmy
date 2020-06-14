@@ -1,8 +1,10 @@
+@import '../theme/globals.scss';
+
 .footer {
   width: 1920px;
   height: 568px;
-  background: #464646 0% 0% no-repeat padding-box;
-  color: #fff;
+  background: $footer_background 0% 0% no-repeat padding-box;
+  color: $white;
   font-size: 1.5rem;
 }
 
@@ -32,7 +34,7 @@
   }
 
   a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
   }
 
@@ -53,7 +55,7 @@
 }
 
 .divider {
-  border: 1px solid #fff;
+  border: 1px solid $white;
   margin: 3.125rem 0;
 }
 
