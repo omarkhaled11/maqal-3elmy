@@ -1,30 +1,28 @@
 import Layout from '../components/Layout';
-import styled from 'styled-components'
 import ArticleCard from '../components/ArticleCard';
 import Jumbotron from '../components/home/Jumbotron';
 import initContentfulService from '../service/contentful';
-import { theme } from '../theme';
+
+import styles from './index.module.scss';
 
 const Home = ({ articles }) => {
   return (
     <Layout>
-      <Jumbotron />
-      {/* <ArticleList /> */}
-        {
-          articles.map(article => (
+      <div className={styles.teaser}>
+        <Jumbotron />
+      </div>
+      <div>
+        <hr className={styles.divider} data-content="صدر حديثا"></hr>
+        <div className={styles.articles}>
+          {/* <ArticleList /> */}
+          {articles.map((article) => (
             <ArticleCard article={article} />
-          ))
-        }
+          ))}
+        </div>
+      </div>
     </Layout>
   );
-}
-
-const Container = styled.div`
-  display: flex;
-  padding: ${theme.metrics.m3};
-  flex-direction: row;
-  flex-wrap: wrap;
-`
+};
 
 export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
@@ -33,7 +31,7 @@ export const getStaticProps = async (ctx) => {
   return {
     props: {
       articles,
-    }
+    },
   };
 };
 

@@ -1,0 +1,44 @@
+@import '../theme/globals.scss';
+
+.teaser {
+  display: flex;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+
+  a:not(:first-child) {
+    margin-right: $m4;
+  }
+}
+
+.divider {
+  position: relative;
+  height: 5em;
+  text-align: center;
+  line-height: 1em;
+  color: black;
+  margin: $m5 0;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    content: '';
+  }
+
+  &:after {
+    display: inline-block;
+    position: relative;
+    background-color: #fcfcfa;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    color: black;
+    font-size: $h2;
+    content: attr(data-content);
+  }
+}
