@@ -1,0 +1,26 @@
+@import '../../theme/globals.scss';
+
+.container {
+  display: flex;
+}
+
+.profile {
+  flex: 1;
+
+  div {
+    margin-bottom: $m1;
+  }
+}
+
+.name {
+  font-size: $h4;
+  font-family: $bold;
+}
+
+.title {
+  font-size: $medium;
+}
+
+.info {
+  flex: 2;
+}

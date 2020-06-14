@@ -1,11 +1,11 @@
 @import '../theme/globals.scss';
 
-.divider {
+.divider_big,
+.divider_small {
   position: relative;
   margin: $m3 0;
-  height: 5em;
-  text-align: center;
-  line-height: 1em;
+
+  line-height: $m1;
   color: #464646;
 
   &:before {
@@ -22,10 +22,26 @@
     display: inline-block;
     position: relative;
     background-color: #fcfcfa;
-    padding: 0 0.5em;
-    line-height: 1.5em;
+    padding: 0 $m_half;
+    line-height: $m1_half;
     font-family: $bold;
-    font-size: $h2;
     content: attr(data-content);
+  }
+}
+
+.divider_big {
+  height: $m5;
+  text-align: center;
+
+  &:after {
+    font-size: $h2;
+  }
+}
+
+.divider_small {
+  height: $m1_half;
+
+  &:after {
+    font-size: $medium;
   }
 }

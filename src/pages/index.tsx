@@ -15,7 +15,6 @@ const Home = ({ articles }) => {
       <div>
         <Divider text="صدر حديثا" />
         <div className={styles.articles}>
-          {/* <ArticleList /> */}
           {articles.map((article) => (
             <ArticleCard article={article} />
           ))}
