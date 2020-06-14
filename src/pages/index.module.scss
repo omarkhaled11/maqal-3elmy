@@ -15,11 +15,11 @@
 
 .divider {
   position: relative;
+  margin: $m5 0;
   height: 5em;
   text-align: center;
   line-height: 1em;
-  color: black;
-  margin: $m5 0;
+  color: #464646;
 
   &:before {
     position: absolute;
@@ -27,7 +27,7 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background: #000;
+    background: #464646;
     content: '';
   }
 
@@ -37,7 +37,7 @@
     background-color: #fcfcfa;
     padding: 0 0.5em;
     line-height: 1.5em;
-    color: black;
+    font-family: $bold;
     font-size: $h2;
     content: attr(data-content);
   }
