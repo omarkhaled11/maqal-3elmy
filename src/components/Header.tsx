@@ -1,20 +1,16 @@
 import Link from 'next/link';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { theme } from '../theme';
-const LogoSvg = require("../svg/logo.svg");
-
 
 const Header = () => (
   <Container>
     <Link href="/">
       <a>
-        <LogoSvg height={70} width={85} />
+        <img src="/logo/red.svg" alt="logo" />
       </a>
     </Link>
     <MenuButton>
-      <MenuText>
-        القائمة
-      </MenuText>
+      <MenuText>القائمة</MenuText>
     </MenuButton>
   </Container>
 );
@@ -54,7 +50,8 @@ const MenuText = styled.span`
 
 /* // menu old */
 
-{/* <div />
+{
+  /* <div />
 <LinksContainer>
   <Link href="/">
     <LinkHref style={{ fontWeight: 'bold' }}>Home</LinkHref>
@@ -70,8 +67,8 @@ const MenuText = styled.span`
       <LinkHref style={{ color: 'white' }}>Contact us</LinkHref>
     </SmallContainer>
   </Link>
-</LinksContainer> */}
-
+</LinksContainer> */
+}
 
 const LinksContainer = styled.div`
   /* padding: ${theme.metrics.m2}; */
@@ -80,20 +77,20 @@ const LinksContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: ${theme.metrics.navbarHeight};
-`
+`;
 
 const SmallContainer = styled.div`
   margin-left: ${theme.metrics.m3};
   margin-right: ${theme.metrics.m3};
   padding: ${theme.metrics.m1};
   border-radius: 100px;
-  height:25px;
+  height: 25px;
   background-color: ${theme.colors.primary};
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const LinkHref = styled.a`
   text-align: center;
@@ -104,8 +101,7 @@ const LinkHref = styled.a`
   :hover {
     color: ${theme.colors.secondary};
     cursor: pointer;
-  };
-`
-
+  }
+`;
 
 export default Header;
