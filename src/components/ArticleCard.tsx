@@ -6,7 +6,7 @@ const ArticleCard = ({ article }) => {
   const { title, slug, discipline, readingTimeInMinutes } = article;
 
   return (
-    <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+    <Link href="/post/[slug]" as={`/post/${slug}`}>
       <div className={styles.container}>
         <div className={styles.discipline}>{discipline.disciplineName}</div>
         <div className={styles.title}>{title}</div>
