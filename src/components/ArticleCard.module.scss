@@ -1,0 +1,56 @@
+@import '../theme/globals.scss';
+
+.container {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: $m3;
+  border: 1px solid $secondary;
+  padding: $smallMargin;
+  width: $imageWidth;
+  word-wrap: break-word;
+
+  :hover {
+    border-color: $themeRed;
+    cursor: pointer;
+
+    span {
+      color: $themeRed;
+    }
+  }
+}
+
+.discipline {
+  margin: $m1 0;
+  font-family: $bold;
+  font-size: $large;
+}
+
+.title {
+  margin: $m1 0;
+  font-size: $h6;
+}
+
+.reading_time {
+  margin: $m1 0;
+  display: flex;
+}
+
+.reading_time_value {
+  font-family: $bold;
+}
+
+.go_to {
+  display: flex;
+  align-items: flex-start;
+  font-family: $bold;
+
+  &:after {
+    display: block;
+    margin-right: $m_half;
+    background: url('/icons/arrow-left.svg') no-repeat 0px 0px;
+    background-size: $m1 $m1;
+    width: $m1;
+    height: $m1;
+    content: '';
+  }
+}

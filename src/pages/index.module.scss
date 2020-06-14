@@ -8,8 +8,8 @@
   display: flex;
   flex-wrap: wrap;
 
-  a:not(:first-child) {
-    margin-right: $m4;
+  > div:not(:last-child) {
+    margin-left: $m4;
   }
 }
 
