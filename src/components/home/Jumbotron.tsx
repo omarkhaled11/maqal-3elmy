@@ -7,14 +7,15 @@ const ArticleCard = () => {
     <div className={styles.container}>
       <div className={styles.text_container}>
         <p className={styles.text}>
-          نحن ١٠٠ باحث و باحثة نكتب عن المقالات العلمية بشكل مبسط
+          نحن <span className={styles.text_red}>١٠٠</span> باحث و باحثة نكتب عن
+          المقالات العلمية بشكل مبسط
         </p>
 
-        {/* <img src="/images/home.png"></img> */}
+        {/* <img className={styles.image} src="/images/home.png"></img> */}
       </div>
       <div className={styles.read_more_container}>
         <p className={styles.read_more}>إقرأ المزيد</p>
-        {/* Icon */}
+        <span className={styles.read_more_button}></span>
       </div>
     </div>
   );
