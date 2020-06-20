@@ -1,5 +1,4 @@
 import Layout from '../components/Layout';
-import ArticleCard from '../components/ArticleCard';
 import Jumbotron from '../components/home/Jumbotron';
 import initContentfulService from '../service/contentful';
 import Divider from '../components/Divider';

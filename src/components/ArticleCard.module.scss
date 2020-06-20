@@ -1,6 +1,7 @@
 @import '../theme/globals.scss';
 
 .container {
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-bottom: $m3;
@@ -27,6 +28,7 @@
 .title {
   margin: $m1 0;
   font-size: $medium;
+  flex: 1
 }
 
 .reading_time {
