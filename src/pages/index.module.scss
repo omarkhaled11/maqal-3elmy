@@ -3,12 +3,3 @@
 .teaser {
   display: flex;
 }
-
-.articles {
-  display: flex;
-  flex-wrap: wrap;
-
-  > div:not(:last-child) {
-    margin-left: $m4;
-  }
-}

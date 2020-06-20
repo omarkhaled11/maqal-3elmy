@@ -1,0 +1,11 @@
+@import '../theme/globals.scss';
+
+.articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  > div:not(:last-child) {
+    margin-left: $m2_half;
+  }
+  > div:nth-child(4n+4) { margin-left: 0;}
+}

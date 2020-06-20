@@ -6,28 +6,27 @@
   margin-bottom: $m3;
   border: 1px solid $secondary;
   padding: $smallMargin;
-  width: $imageWidth;
+  min-width: 15%;
+  max-width: 17.5%;
+  flex: 1 0;
   word-wrap: break-word;
 
   :hover {
     border-color: $themeRed;
     cursor: pointer;
+    color: $themeRed;
 
-    span {
-      color: $themeRed;
-    }
   }
 }
 
 .discipline {
-  margin: $m1 0;
   font-family: $bold;
-  font-size: $large;
+  font-size: $medium;
 }
 
 .title {
   margin: $m1 0;
-  font-size: $h6;
+  font-size: $medium;
 }
 
 .reading_time {

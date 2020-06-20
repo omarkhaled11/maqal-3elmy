@@ -5,6 +5,7 @@ import initContentfulService from '../service/contentful';
 import Divider from '../components/Divider';
 
 import styles from './index.module.scss';
+import ArticleList from '../components/ArticleList';
 
 const Home = ({ articles }) => {
   return (
@@ -14,11 +15,7 @@ const Home = ({ articles }) => {
       </div>
       <div>
         <Divider text="صدر حديثا" />
-        <div className={styles.articles}>
-          {articles.map((article) => (
-            <ArticleCard article={article} />
-          ))}
-        </div>
+        <ArticleList articles={articles} />
       </div>
     </Layout>
   );

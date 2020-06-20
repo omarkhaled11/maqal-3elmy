@@ -9,7 +9,7 @@
 .text {
   font-family: $bold;
   color: $primary;
-  font-size: $h2;
+  font-size: $h3;
 }
 
 .text_red {
@@ -25,6 +25,7 @@
   box-shadow: 0 30px 40px -60px rgba(233, 75, 60, 0.8) inset;
   padding-top: $m6;
   padding-bottom: $m6;
+  width: 45%;
 }
 
 .image {
@@ -35,7 +36,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: $h4;
+  font-size: $h5;
 
   &:after {
     display: block;
