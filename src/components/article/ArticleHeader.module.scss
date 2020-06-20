@@ -1,0 +1,55 @@
+@import '../../theme/globals.scss';
+
+.article_header_container {
+  -moz-box-shadow: 25px 0 22px -45px rgba(233, 75, 60, 0.8);
+  -webkit-box-shadow: 25px 0 22px -45px rgba(233, 75, 60, 0.8);
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: $m5;
+  box-shadow: 30px 0 48px -60px rgba(233, 75, 60, 0.8);
+  padding: $m1 $m2;
+  overflow: auto;
+}
+
+.article_header {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  border-bottom: 1px solid red;
+  padding-bottom: $m4;
+}
+
+.discipline_text {
+  margin-bottom: $m2;
+  color: $primary;
+  font-family: $bold;
+  font-size: $medium;
+}
+
+.title {
+  color: $themeRed;
+  font-family: $bold;
+  font-size: $h4;
+}
+
+.info_row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin-top: $m3;
+}
+
+.info_label {
+  color: $primary;
+  font-size: $small;
+}
+
+.info_value {
+  color: $primary;
+  font-family: $bold;
+  font-size: $small;
+}

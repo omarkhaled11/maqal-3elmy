@@ -127,6 +127,20 @@ const initContentfulService = () => {
     return data.items.map(mapSlug).filter(a => a);
   };
 
+  /**
+   * Get all authors with their articles
+   */
+  const getAuthorsWithArticles = async () => {
+    // TODO:
+  };
+
+  /**
+   * Get all disciplines with related articles
+   */
+  const getDisciplineWithArticles = async () => {
+    // TODO:
+  };
+
   // export api calls
   return {
     getArticles,
@@ -138,6 +152,8 @@ const initContentfulService = () => {
     getAuthors,
     getAuthorBySlug,
     getAuthorsSlugs,
+    getAuthorsWithArticles,
+    getDisciplineWithArticles,
   };
 };
 
