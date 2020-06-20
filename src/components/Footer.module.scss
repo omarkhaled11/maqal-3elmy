@@ -1,36 +1,55 @@
 @import '../theme/globals.scss';
 
 .footer {
-  height: 568px;
   background: $footer_background 0% 0% no-repeat padding-box;
   color: $white;
   font-size: 1.5rem;
 }
 
 .container {
-  width: 1064px;
   margin: auto;
   padding: 3.125rem 0;
+
+  @media only screen and (min-width: 768px) {
+    width: 1064px;
+  }
+}
+
+.logo_container {
+  display: flex;
+  justify-content: center;
+  margin: $m3;
+
+  @media only screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
 }
 
 .logo {
   width: 6rem;
   height: 6rem;
-  margin: 2rem 0;
+  margin: auto;
+
+  @media only screen and (min-width: 768px) {
+    margin: 2rem 0;
+  }
 }
 
 .links {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .nav {
   display: flex;
-
-  a:not(:first-child) {
-    margin-right: 5.625rem;
-  }
+  font-size: $small;
+  margin: $m2 0;
 
   a {
     color: $white;
@@ -39,6 +58,19 @@
 
   a:hover {
     text-decoration: underline;
+  }
+
+  a:not(:first-child) {
+    margin-right: $m1;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: $large;
+    margin: 0;
+
+    a:not(:first-child) {
+      margin-right: $m5;
+    }
   }
 }
 
@@ -59,5 +91,11 @@
 }
 
 .copyrights {
-  font-size: 1.875rem;
+  font-size: $large;
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
 }

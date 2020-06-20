@@ -10,7 +10,8 @@ const ArticleList = ({ articles }) => {
       <ArticleCard article={articles[1]} />
       <ArticleCard article={articles[1]} />
       <ArticleCard article={articles[1]} />
-      {articles.map(article => (
+
+      {articles.map((article) => (
         <ArticleCard article={article} />
       ))}
     </div>

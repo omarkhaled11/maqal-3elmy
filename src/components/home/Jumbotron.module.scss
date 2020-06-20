@@ -3,7 +3,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  padding: 0 $m3;
+
+  @media only screen and (min-width: 768px) {
+  }
 }
 
 .text {
@@ -23,9 +26,11 @@
   display: flex;
   justify-content: space-between;
   box-shadow: 0 30px 40px -60px rgba(233, 75, 60, 0.8) inset;
-  padding-top: $m6;
-  padding-bottom: $m6;
-  width: 45%;
+  padding: $m5 0;
+
+  @media only screen and (min-width: 768px) {
+    width: 45%;
+  }
 }
 
 .image {

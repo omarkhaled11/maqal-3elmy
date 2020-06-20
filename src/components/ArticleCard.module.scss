@@ -7,16 +7,18 @@
   margin-bottom: $m3;
   border: 1px solid $secondary;
   padding: $smallMargin;
-  min-width: 15%;
-  max-width: 17.5%;
   flex: 1 0;
   word-wrap: break-word;
 
-  :hover {
+  @media only screen and (min-width: 768px) {
+    min-width: 15%;
+    max-width: 17.5%;
+  }
+
+  &:hover {
     border-color: $themeRed;
     cursor: pointer;
     color: $themeRed;
-
   }
 }
 
@@ -28,7 +30,7 @@
 .title {
   margin: $m1 0;
   font-size: $medium;
-  flex: 1
+  flex: 1;
 }
 
 .reading_time {

@@ -2,10 +2,19 @@
 
 .articles {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  > div:not(:last-child) {
-    margin-left: $m2_half;
+  padding: 0 $m3;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+
+    > div:not(:last-child) {
+      margin-left: $m2_half;
+    }
+
+    > div:nth-child(4n + 4) {
+      margin-left: 0;
+    }
   }
-  > div:nth-child(4n+4) { margin-left: 0;}
 }

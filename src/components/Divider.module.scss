@@ -4,7 +4,6 @@
 .divider_small {
   position: relative;
   margin: $m3 0;
-
   line-height: $m1;
   color: #464646;
 
@@ -22,7 +21,7 @@
     display: inline-block;
     position: relative;
     background-color: #fcfcfa;
-    padding: 0 $m_half;
+    padding: $m2 $m_half;
     line-height: $m1_half;
     font-family: $bold;
     content: attr(data-content);
