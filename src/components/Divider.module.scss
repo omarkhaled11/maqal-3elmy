@@ -6,6 +6,7 @@
   margin: $m3 0;
   line-height: $m1;
   color: #464646;
+  z-index: -9;
 
   &:before {
     position: absolute;

@@ -1,0 +1,120 @@
+@import '../theme/globals.scss';
+
+.input {
+  display: none;
+}
+
+.toggle_btn {
+  display: block;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+
+  .bar {
+    transition: all 0.3s ease-in-out;
+    margin: $m_half auto;
+    background-color: $secondary;
+    width: $m2;
+    height: 2px;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+
+  .list {
+    display: flex;
+    position: relative;
+    top: 20%;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    margin: auto;
+    padding-bottom: $m1;
+    list-style: none;
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      border-bottom: 1px solid $primary;
+      width: 1064px;
+    }
+
+    .item {
+      transform: translateY(50px);
+      opacity: 0;
+      margin-bottom: $m1;
+
+      @media only screen and (min-width: 768px) {
+        margin: 0;
+      }
+
+      .link {
+        display: block;
+        transition: all 0.2s ease-in-out;
+        padding: 0 $m2;
+        text-align: center;
+        text-decoration: none;
+        color: $text;
+        font-size: $large;
+
+        &:hover {
+          color: $themeRed;
+        }
+      }
+    }
+  }
+}
+
+.input:checked {
+  & ~ .nav {
+    visibility: visible;
+    opacity: 1;
+
+    .list {
+      .item {
+        transform: translateY(0px);
+        opacity: 1;
+
+        @for $i from 1 through 4 {
+          $t: $i * 0.1;
+
+          &:nth-child(#{$i}) {
+            transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) #{$t}s;
+          }
+        }
+      }
+    }
+  }
+
+  & + .label.toggle_btn {
+    .bar {
+      background-color: $themeRed;
+
+      &:nth-child(2) {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+
+      &:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.sub_nav {
+  display: inline;
+}

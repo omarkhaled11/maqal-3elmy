@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import styled from 'styled-components';
-import { theme } from '../theme';
+
+import Menu from './Menu';
 
 import styles from './Header.module.scss';
 
@@ -13,11 +13,7 @@ const Header = () => (
         </a>
       </Link>
       <div className={styles.menu_button}>
-        <img
-          className={styles.menu_button_icon}
-          src="/icons/menu.svg"
-          alt="menu"
-        />
+        <Menu />
       </div>
     </div>
   </div>
