@@ -4,6 +4,14 @@ import Divider from '../components/Divider';
 const About = () => {
   return (
     <Layout>
+      <Head>
+        <title>مقال علمي </title>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
+      </Head>
       <Divider text="رؤيتنا" />
       <p>
         هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي

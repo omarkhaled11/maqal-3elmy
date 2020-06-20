@@ -19,12 +19,12 @@ const Menu = () => {
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <a className={styles.link} href="#">
+            <a className={styles.link} href="/about">
               من نحن
             </a>
           </li>
           <li className={styles.item}>
-            <a className={styles.link} href="#">
+            <a className={styles.link} href="/editors">
               محررينا
             </a>
           </li>
@@ -34,7 +34,7 @@ const Menu = () => {
             </a>
           </li>
           <li className={styles.item}>
-            <a className={styles.link} href="#">
+            <a className={styles.link} href="/contact">
               تواصل معنا
             </a>
           </li>

@@ -4,9 +4,9 @@ import Layout from '../components/Layout';
 import Jumbotron from '../components/home/Jumbotron';
 import initContentfulService from '../service/contentful';
 import Divider from '../components/Divider';
+import ArticleList from '../components/ArticleList';
 
 import styles from './index.module.scss';
-import ArticleList from '../components/ArticleList';
 
 const Home = ({ articles }) => {
   return (

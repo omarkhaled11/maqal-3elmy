@@ -4,9 +4,10 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: 0 auto;
+  margin: $m3 $m1_half;
 
   @media only screen and (min-width: 768px) {
     width: 1064px;
+    margin: $m3 auto;
   }
 }

@@ -1,5 +1,6 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import moment from 'moment';
+import Head from 'next/head';
 
 import Layout from '../../components/Layout';
 import initContentfulService from '../../service/contentful';
@@ -7,6 +8,14 @@ import initContentfulService from '../../service/contentful';
 const Discipline = () => {
   return (
     <Layout>
+      <Head>
+        <title>مقال علمي </title>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
+      </Head>
       <div></div>
     </Layout>
   );

@@ -1,5 +1,6 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import moment from 'moment';
+import Head from 'next/head';
 
 import Layout from '../../components/Layout';
 import initContentfulService from '../../service/contentful';
@@ -11,24 +12,33 @@ import styles from './editor.module.scss';
 const Editor = ({ author }) => {
   return (
     <Layout>
+      <Head>
+        <title>مقال علمي </title>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no"
+        />
+      </Head>
       <div className={styles.container}>
         <div className={styles.profile}>
-          <div>
-            <img src={author.authorImage.fields.file.url} alt="" />
-          </div>
+          <img
+            className={styles.image}
+            src={author.authorImage.fields.file.url}
+            alt=""
+          />
           <div className={styles.name}>{author.name}</div>
           <div className={styles.title}>{author.title}</div>
-
+        </div>
+        <div className={styles.info}>
+          <h1 className={styles.title}>السيرة الذاتية</h1>
+          <div className={styles.text}>{author.shortBio}</div>
           <Divider text="مشاركات المحرر" size="small" />
-
           <div>
             {author.authorArticles.map((entry) => (
               <ArticleCard article={entry.fields} />
             ))}
           </div>
-        </div>
-        <div className={styles.info}>
-          <div>{author.shortBio}</div>
         </div>
       </div>
     </Layout>
