@@ -24,19 +24,19 @@ const Editor = ({ author }) => {
         <div className={styles.profile}>
           <img
             className={styles.image}
-            src={author.authorImage.fields.file.url}
+            src={author?.authorImage?.fields?.file?.url}
             alt=""
           />
-          <div className={styles.name}>{author.name}</div>
-          <div className={styles.title}>{author.title}</div>
+          <div className={styles.name}>{author?.name}</div>
+          <div className={styles.title}>{author?.title}</div>
         </div>
         <div className={styles.info}>
           <h1 className={styles.title}>السيرة الذاتية</h1>
-          <div className={styles.text}>{author.shortBio}</div>
+          <div className={styles.text}>{author?.shortBio}</div>
           <Divider text="مشاركات المحرر" size="small" />
           <div>
-            {author.authorArticles.map((entry) => (
-              <ArticleCard article={entry.fields} />
+            {author?.authorArticles?.map((entry) => (
+              <ArticleCard article={entry?.fields} />
             ))}
           </div>
         </div>
