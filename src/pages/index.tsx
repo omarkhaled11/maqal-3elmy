@@ -8,9 +8,9 @@ import ArticleList from '../components/ArticleList';
 
 import styles from './index.module.scss';
 
-const Home = ({ articles }) => {
+const Home = ({ articles, disciplines }) => {
   return (
-    <Layout>
+    <Layout disciplines={disciplines}>
       <Head>
         <title>مقال علمي </title>
         <meta charSet="utf-8" />
@@ -33,10 +33,14 @@ const Home = ({ articles }) => {
 export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
   const articles = await client.getArticles();
+  const disciplines = await client.getDisciplines();
+
+  console.log(disciplines);
 
   return {
     props: {
       articles,
+      disciplines,
     },
   };
 };
