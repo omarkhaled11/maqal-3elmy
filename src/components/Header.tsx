@@ -4,7 +4,7 @@ import Menu from './Menu';
 
 import styles from './Header.module.scss';
 
-const Header = () => (
+const Header = ({ disciplines }) => (
   <div className={styles.header}>
     <div className={styles.container}>
       <Link href="/">
@@ -13,7 +13,7 @@ const Header = () => (
         </a>
       </Link>
       <div className={styles.menu_button}>
-        <Menu />
+        <Menu disciplines={disciplines} />
       </div>
     </div>
   </div>

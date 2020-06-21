@@ -3,10 +3,10 @@ import Footer from './Footer';
 
 import styles from './Layout.module.scss';
 
-const Layout = (props) => (
+const Layout = ({ children, disciplines }) => (
   <>
-    <Header />
-    <div className={styles.layout}>{props.children}</div>
+    <Header disciplines={disciplines} />
+    <div className={styles.layout}>{children}</div>
     <Footer />
   </>
 );
