@@ -28,17 +28,21 @@ const Editor = ({ author }) => {
             alt=""
           />
           <div className={styles.name}>{author?.name}</div>
+          <div className={styles.country}>مصر</div>
+          {/* author?.country */}
           <div className={styles.title}>{author?.title}</div>
+          <Divider text="مشاركات المحرر" size="small" />
+          <div className={styles.articleList}>
+          <ArticleCard maxWidth article={author.authorArticles[0].fields} />
+          <ArticleCard maxWidth article={author.authorArticles[0].fields} />
+            {/* {author?.authorArticles?.map((entry) => (
+              <ArticleCard maxWidth article={entry?.fields} />
+            ))} */}
+          </div>
         </div>
         <div className={styles.info}>
           <h1 className={styles.title}>السيرة الذاتية</h1>
           <div className={styles.text}>{author?.shortBio}</div>
-          <Divider text="مشاركات المحرر" size="small" />
-          <div>
-            {author?.authorArticles?.map((entry) => (
-              <ArticleCard article={entry?.fields} />
-            ))}
-          </div>
         </div>
       </div>
     </Layout>
@@ -49,7 +53,7 @@ export async function getStaticProps({ ...ctx }) {
   const client = initContentfulService();
   const { slug } = ctx.params; // params contains the post `slug`.
   const author = await client.getAuthorBySlug(slug);
-
+  console.log(author)
   return {
     props: {
       author: {

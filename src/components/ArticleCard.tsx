@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 import styles from './ArticleCard.module.scss';
 
-const ArticleCard = ({ article }) => {
+const ArticleCard = ({ article, maxWidth }) => {
   const { title, slug, discipline, readingTimeInMinutes } = article;
 
   return (
     <Link href="/post/[slug]" as={`/post/${slug}`}>
-      <div className={styles.container}>
+      <div className={`${styles.container} ${maxWidth && styles.maxWidth}`}>
         <div className={styles.discipline}>{discipline?.disciplineName}</div>
         <div className={styles.title}>{title}</div>
         <div className={styles.reading_time}>

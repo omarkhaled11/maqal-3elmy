@@ -3,6 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  padding-bottom: $m4;
 
   @media only screen and (min-width: 768px) {
     flex-direction: row;
@@ -12,48 +13,70 @@
 .profile {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
-  flex: 1;
+  flex: 1.5;
 
   @media only screen and (min-width: 768px) {
     justify-content: flex-start;
+    margin-left: $m3;
   }
 
   div {
-    margin-bottom: $m1;
+    margin-bottom: $m_half;
   }
 }
 
 .image {
+  border-bottom: 1px solid $themeRed;
   margin-bottom: $m2;
+  max-width: 280px;
+  margin-top: $m3;
 }
 
 .name {
   font-size: $h4;
   font-family: $bold;
+  color: $primary;
+}
+
+.country {
+  font-size: $medium;
+  color: $primary;
 }
 
 .title {
   font-size: $medium;
+  color: $themeRed;
+}
+
+.articleList {
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: $m3;
+  }
 }
 
 .info {
   display: flex;
+  flex: 2.5;
   flex-direction: column;
-  margin: $m2 0;
+  margin: $m3 0;
+  line-height: $baseMargin;
+  font-size: $medium;
 
   @media only screen and (min-width: 768px) {
     -moz-box-shadow: 25px 0 22px -45px rgba(233, 75, 60, 0.8);
     -webkit-box-shadow: 25px 0 22px -45px rgba(233, 75, 60, 0.8);
     box-shadow: 30px 0 48px -60px rgba(233, 75, 60, 0.8);
-    padding: $m1 $m2;
+    padding: $m2 $m3;
   }
 
   .title {
-    font-size: $h5;
+    font-family: $bold;
+    font-size: $large;
+    color: $primary;
     margin-bottom: $m2;
-  }
-
-  .text {
   }
 }
