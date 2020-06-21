@@ -10,9 +10,10 @@ const ArticleHeader = ({ article }) => {
     readingTimeInMinutes,
     discipline,
     authors,
+    linguistics,
     publishDate,
   } = article;
-
+console.log(article)
   return (
     <div className={styles.article_header_container}>
       <div className={styles.article_header}>
@@ -25,7 +26,8 @@ const ArticleHeader = ({ article }) => {
             {' '}
             مدة القراءة:{' '}
             <span className={styles.info_value}>
-              {readingTimeInMinutes} دقائق{' '}
+
+              {readingTimeInMinutes} {readingTimeInMinutes > 10 ? 'دقيقة' : 'دقائق' }
             </span>
           </div>
         </div>
@@ -34,9 +36,9 @@ const ArticleHeader = ({ article }) => {
             المحررين:{' '}
             <span className={styles.info_value}>
               {authors
-                .filter(author => !author.isLinguistic)
+                .filter(a => a)
                 .map((author, index) =>
-                  index === authors.length ? author.name : `${author.name} /`
+                  index === authors.length - 1 ? author.name : `${author.name} / `
                 )}
             </span>
           </div>
@@ -45,9 +47,9 @@ const ArticleHeader = ({ article }) => {
           <div className={styles.info_label}>
             المدققين اللغويين:{' '}
             <span className={styles.info_value}>
-              {authors
-                .filter(author => author.isLinguistic)
-                .map(author => author.name)}
+              {linguistics
+                .filter(a => a)
+                .map(editor => editor.name)}
             </span>
           </div>
         </div>

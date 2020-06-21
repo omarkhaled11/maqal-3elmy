@@ -6,6 +6,7 @@ export const mapArticle = (item) => {
       ...fields['discipline']?.fields,
     },
     authors: _getAuthorsReference(fields['authors']),
+    linguistics: _getAuthorsReference(fields['linguistics']),
   }
 }
 
