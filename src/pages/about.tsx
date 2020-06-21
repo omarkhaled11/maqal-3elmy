@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Layout from '../components/Layout';
 import Divider from '../components/Divider';
 
