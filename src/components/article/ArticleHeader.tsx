@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Link from 'next/link';
 
 import styles from './ArticleHeader.module.scss';
 
@@ -36,15 +37,19 @@ const ArticleHeader = ({ article }) => {
         <div className={styles.info_row}>
           <div className={styles.info_label}>
             المحررين:{' '}
-            <span className={styles.info_value}>
               {authors
                 .filter(a => a)
                 .map((author, index) =>
-                  index === authors.length - 1
+            <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
+              <a>
+                <span className={`${styles.info_value} ${styles.author_link}`}>
+                  {index === authors.length - 1
                     ? author.name
-                    : `${author.name} / `
-                )}
+                    : `${author.name} / `}
             </span>
+            </a>
+            </Link>
+                )}
           </div>
         </div>
         <div className={styles.info_row}>

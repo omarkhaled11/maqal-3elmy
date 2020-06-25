@@ -33,14 +33,10 @@ const Home = ({ articles, disciplines }) => {
 export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
   const articles = await client.getArticles();
-  const disciplines = await client.getDisciplines();
-
-  console.log(disciplines);
 
   return {
     props: {
       articles,
-      disciplines,
     },
   };
 };

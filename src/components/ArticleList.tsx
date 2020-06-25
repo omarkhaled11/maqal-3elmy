@@ -5,14 +5,8 @@ import styles from './ArticleList.module.scss';
 const ArticleList = ({ articles }) => {
   return (
     <div className={styles.articles}>
-      <ArticleCard article={articles[1]} />
-      <ArticleCard article={articles[1]} />
-      <ArticleCard article={articles[1]} />
-      <ArticleCard article={articles[1]} />
-      <ArticleCard article={articles[1]} />
-
-      {articles.map((article) => (
-        <ArticleCard article={article} />
+      {articles.map((article, index) => (
+        <ArticleCard key={index} article={article} />
       ))}
     </div>
   );
