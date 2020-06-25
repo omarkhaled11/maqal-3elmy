@@ -6,7 +6,10 @@
   flex-direction: row;
   justify-content: flex-start;
   overflow: auto;
-  padding: $m3 $m2;
+
+  @media only screen and (min-width: 768px) {
+    padding: $m3 $m2;
+  }
 
   p {
     font-size: $medium;

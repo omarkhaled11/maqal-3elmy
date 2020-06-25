@@ -4,13 +4,16 @@
   -moz-box-shadow: 25px 0 22px -45px rgba(233, 75, 60, 0.8);
   -webkit-box-shadow: 25px 0 22px -45px rgba(233, 75, 60, 0.8);
   display: flex;
-  flex: 2;
   flex-direction: row;
   justify-content: center;
   margin-top: $m2;
   box-shadow: 30px 0 48px -60px rgba(233, 75, 60, 0.8);
-  padding: $m1 $m2;
   overflow: auto;
+  flex: 1;
+  padding: $m1 $m2;
+  @media only screen and (min-width: 768px) {
+    flex: 2;
+  }
 }
 
 .article_header {
@@ -21,6 +24,12 @@
   overflow: auto;
   border-bottom: 1px solid red;
   padding-bottom: $m4;
+}
+
+.article_header_left {
+  @media only screen and (min-width: 768px) {
+    flex: 1;
+  }
 }
 
 .discipline_text {

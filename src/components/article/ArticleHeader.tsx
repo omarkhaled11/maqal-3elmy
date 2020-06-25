@@ -66,7 +66,7 @@ const ArticleHeader = ({ article }) => {
           </div>
         </div>
       </div>
-      <div style={{ flex: 1 }} />
+      <div className={styles.article_header_left} />
     </div>
   );
 };
