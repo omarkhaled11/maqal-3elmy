@@ -2,6 +2,10 @@ import Link from 'next/link';
 
 import styles from './Footer.module.scss';
 
+const FACEBOOK_LINK = "https://www.facebook.com/%D9%85%D9%82%D8%A7%D9%84-%D8%B9%D9%84%D9%85%D9%8A-109854060656506/";
+const LINKEDIN_LINK = "https://www.linkedin.com/company/42876982/";
+const TWITTER_LINK = "https://twitter.com/qNlEssc4yeVMrF9";
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -25,33 +29,27 @@ const Footer = () => {
             </Link>
           </nav>
           <div className={styles.social_media_container}>
-            <Link href="/">
-              <a>
+              <a href={FACEBOOK_LINK}>
                 <img
                   className={styles.social_media}
                   src="/icons/fb.svg"
                   alt="facebook"
                 />
               </a>
-            </Link>
-            <Link href="/">
-              <a>
+              <a href={LINKEDIN_LINK}>
                 <img
                   className={styles.social_media}
                   src="/icons/li.svg"
                   alt="linkedin"
                 />
               </a>
-            </Link>
-            <Link href="/">
-              <a>
+              <a href={TWITTER_LINK}>
                 <img
                   className={styles.social_media}
                   src="/icons/tw.svg"
                   alt="twitter"
                 />
               </a>
-            </Link>
           </div>
         </div>
         <div>
