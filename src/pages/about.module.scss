@@ -12,20 +12,34 @@
 
 .button_group {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: $m3;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 
   button {
     opacity: 1;
     border: 1px solid #e94b3c;
     background: none;
     padding: $m1;
-    width: 25%;
+    width: 100%;
     font-family: $bold;
     font-size: $medium;
-  }
 
-  button:first-child {
-    margin-left: $m2;
+    &:first-child {
+      margin-bottom: $m1;
+    }
+
+    @media only screen and (min-width: 768px) {
+      width: 25%;
+
+      &:first-child {
+        margin-bottom: 0;
+        margin-left: $m2;
+      }
+    }
   }
 }
