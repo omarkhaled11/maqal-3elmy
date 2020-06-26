@@ -155,7 +155,7 @@ const initContentfulService = () => {
     };
 
     return {
-      discipline,
+      discipline: discipline || [],
       articles,
     };
   };

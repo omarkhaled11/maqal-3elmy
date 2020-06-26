@@ -28,8 +28,7 @@ const Editor = ({ author }) => {
             alt=""
           />
           <div className={styles.name}>{author?.name}</div>
-          <div className={styles.country}>مصر</div>
-          {/* author?.country */}
+          <div className={styles.country}>{author?.country}</div>
           <div className={styles.title}>{author?.title}</div>
           <Divider text="مشاركات المحرر" size="small" />
           <div className={styles.articleList}>
