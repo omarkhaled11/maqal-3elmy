@@ -40,7 +40,7 @@ const Editor = ({ author }) => {
         </div>
         <div className={styles.info}>
           <h1 className={styles.title}>السيرة الذاتية</h1>
-          <div className={styles.text}>{author?.shortBio}</div>
+          <div dangerouslySetInnerHTML={{ __html: author?.bio }} />
         </div>
       </div>
     </Layout>
@@ -55,7 +55,7 @@ export async function getStaticProps({ ...ctx }) {
     props: {
       author: {
         ...author,
-        body: documentToHtmlString(author.body),
+        bio: documentToHtmlString(author.bio),
       },
     },
   };
