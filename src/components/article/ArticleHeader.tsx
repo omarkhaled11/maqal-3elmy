@@ -14,7 +14,6 @@ const ArticleHeader = ({ article }) => {
     linguistics,
     publishDate,
   } = article;
-  console.log(article);
   return (
     <div className={styles.article_header_container}>
       <div className={styles.article_header}>

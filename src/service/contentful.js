@@ -128,17 +128,36 @@ const initContentfulService = () => {
   };
 
   /**
-   * Get all authors with their articles
+   * Get all authors under disciplines
    */
-  const getAuthorsWithArticles = async () => {
-    // TODO:
+  const getAuthorsList = async () => {
+    const disciplines = await getDisciplines();
+    return {
+      disciplines: disciplines.filter(d => d?.authors?.length !== 0)
+    }
   };
 
   /**
    * Get all disciplines with related articles
    */
-  const getDisciplineWithArticles = async () => {
-    // TODO:
+  const getDisciplineWithArticles = async (slug) => {
+    const discipline = await getDisciplineBySlug(slug);
+
+    const articlesData = await client.getEntries({
+      content_type: CONTENT_TYPE_BLOGPOST,
+      'fields.discipline.sys.contentType.sys.id': 'discipline',
+      'fields.discipline.fields.slug[in]': `${slug}`,
+    });
+
+    let articles = [];
+    if (articlesData.items && articlesData.items.length > 0) {
+      articles = articlesData.items.map(mapArticle);
+    };
+
+    return {
+      discipline,
+      articles,
+    };
   };
 
   // export api calls
@@ -152,7 +171,7 @@ const initContentfulService = () => {
     getAuthors,
     getAuthorBySlug,
     getAuthorsSlugs,
-    getAuthorsWithArticles,
+    getAuthorsList,
     getDisciplineWithArticles,
   };
 };

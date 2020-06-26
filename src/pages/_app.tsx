@@ -11,7 +11,7 @@ export default class MyApp extends App {
     const client = initContentfulService();
     const disciplines = await client.getDisciplines();
 
-    console.log(disciplines);
+    // console.log(disciplines);
 
     return {
       pageProps: Component.getInitialProps

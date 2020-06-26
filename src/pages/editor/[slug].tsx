@@ -51,7 +51,6 @@ export async function getStaticProps({ ...ctx }) {
   const client = initContentfulService();
   const { slug } = ctx.params; // params contains the post `slug`.
   const author = await client.getAuthorBySlug(slug);
-  console.log(author)
   return {
     props: {
       author: {
