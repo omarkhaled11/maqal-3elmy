@@ -1,0 +1,31 @@
+@import '../theme/globals.scss';
+
+.text {
+  text-align: justify;
+  font-size: $medium;
+}
+
+.text_container {
+  margin: auto;
+  width: 70%;
+}
+
+.button_group {
+  display: flex;
+  justify-content: center;
+  margin: $m3;
+
+  button {
+    opacity: 1;
+    border: 1px solid #e94b3c;
+    background: none;
+    padding: $m1;
+    width: 25%;
+    font-family: $bold;
+    font-size: $medium;
+  }
+
+  button:first-child {
+    margin-left: $m2;
+  }
+}
