@@ -33,11 +33,9 @@ const Editor = ({ author }) => {
           <div className={styles.title}>{author?.title}</div>
           <Divider text="مشاركات المحرر" size="small" />
           <div className={styles.articleList}>
-          <ArticleCard maxWidth article={author.authorArticles[0].fields} />
-          <ArticleCard maxWidth article={author.authorArticles[0].fields} />
-            {/* {author?.authorArticles?.map((entry) => (
+            {author?.authorArticles?.map((entry) => (
               <ArticleCard maxWidth article={entry?.fields} />
-            ))} */}
+            ))}
           </div>
         </div>
         <div className={styles.info}>

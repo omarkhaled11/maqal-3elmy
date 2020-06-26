@@ -1,4 +1,5 @@
 import moment from 'moment';
+import Link from 'next/link';
 
 import styles from './ArticleHeader.module.scss';
 
@@ -13,7 +14,7 @@ const ArticleHeader = ({ article }) => {
     linguistics,
     publishDate,
   } = article;
-console.log(article)
+  console.log(article);
   return (
     <div className={styles.article_header_container}>
       <div className={styles.article_header}>
@@ -22,34 +23,40 @@ console.log(article)
         </div>
         <div className={styles.title}>{title}</div>
         <div className={styles.info_row}>
-          <div className={styles.info_label}>
-            {' '}
-            مدة القراءة:{' '}
-            <span className={styles.info_value}>
-
-              {readingTimeInMinutes} {readingTimeInMinutes > 10 ? 'دقيقة' : 'دقائق' }
-            </span>
-          </div>
+          {!!readingTimeInMinutes && (
+            <div className={styles.info_label}>
+              {' '}
+              مدة القراءة:{' '}
+              <span className={styles.info_value}>
+                {readingTimeInMinutes}{' '}
+                {readingTimeInMinutes > 10 ? 'دقيقة' : 'دقائق'}
+              </span>
+            </div>
+          )}
         </div>
         <div className={styles.info_row}>
           <div className={styles.info_label}>
             المحررين:{' '}
-            <span className={styles.info_value}>
               {authors
                 .filter(a => a)
                 .map((author, index) =>
-                  index === authors.length - 1 ? author.name : `${author.name} / `
-                )}
+            <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
+              <a>
+                <span className={`${styles.info_value} ${styles.author_link}`}>
+                  {index === authors.length - 1
+                    ? author.name
+                    : `${author.name} / `}
             </span>
+            </a>
+            </Link>
+                )}
           </div>
         </div>
         <div className={styles.info_row}>
           <div className={styles.info_label}>
             المدققين اللغويين:{' '}
             <span className={styles.info_value}>
-              {linguistics
-                .filter(a => a)
-                .map(editor => editor.name)}
+              {linguistics.filter(a => a).map(editor => editor.name)}
             </span>
           </div>
         </div>
@@ -59,7 +66,7 @@ console.log(article)
           </div>
         </div>
       </div>
-      <div style={{ flex: 1 }} />
+      <div className={styles.article_header_left} />
     </div>
   );
 };
