@@ -62,7 +62,7 @@ const Menu = ({ disciplines }) => {
               {naturalSciencesDisciplines.map((discipline) => {
                 return (
                   <li className={styles.item}>
-                    <a className={styles.link} href="#">
+                    <a className={styles.link} href={`discipline/${discipline.slug}`}>
                       {discipline.disciplineName}
                     </a>
                   </li>
@@ -76,7 +76,7 @@ const Menu = ({ disciplines }) => {
               {socialSciencesDisciplines.map((discipline) => {
                 return (
                   <li className={styles.item}>
-                    <a className={styles.link} href="#">
+                    <a className={styles.link} href={`discipline/${discipline.slug}`}>
                       {discipline.disciplineName}
                     </a>
                   </li>

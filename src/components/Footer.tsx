@@ -15,10 +15,10 @@ const Footer = () => {
         </div>
         <div className={styles.links}>
           <nav className={styles.nav}>
-            <Link href="/">
+            <Link href="/about">
               <a>من نحن</a>
             </Link>
-            <Link href="/">
+            <Link href="/disciplineEditors">
               <a>عن محررينا</a>
             </Link>
             <Link href="/">
