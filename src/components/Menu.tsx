@@ -1,9 +1,6 @@
 import cn from 'classnames';
 
-import initContentfulService from '../service/contentful';
-
 import styles from './Menu.module.scss';
-import { debug } from 'console';
 
 const Menu = ({ disciplines }) => {
   const naturalSciencesDisciplines = disciplines?.reduce(

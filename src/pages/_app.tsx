@@ -1,15 +1,35 @@
-import App from 'next/app'
-import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import { theme } from '../theme'
+import App from 'next/app';
+import React from 'react';
+
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+import initContentfulService from '../service/contentful';
 
 export default class MyApp extends App {
+  static async getInitialProps({ Component, ctx }: any) {
+    const client = initContentfulService();
+    const disciplines = await client.getDisciplines();
+
+    console.log(disciplines);
+
+    return {
+      pageProps: Component.getInitialProps
+        ? await Component.getInitialProps(ctx)
+        : {},
+      disciplines,
+    };
+  }
+
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, disciplines } = this.props;
+
     return (
-      <ThemeProvider theme={theme}>
+      <>
+        <Header disciplines={disciplines} />
         <Component {...pageProps} />
-      </ThemeProvider>
-    )
+        <Footer />
+      </>
+    );
   }
 }

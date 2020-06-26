@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 
 const Home = ({ articles, disciplines }) => {
   return (
-    <Layout disciplines={disciplines}>
+    <Layout>
       <Head>
         <title>مقال علمي </title>
         <meta charSet="utf-8" />
@@ -33,14 +33,10 @@ const Home = ({ articles, disciplines }) => {
 export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
   const articles = await client.getArticles();
-  const disciplines = await client.getDisciplines();
-
-  console.log(disciplines);
 
   return {
     props: {
       articles,
-      disciplines,
     },
   };
 };
