@@ -1,5 +1,5 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import moment from 'moment';
+import { BLOCKS } from '@contentful/rich-text-types';
 import Head from 'next/head';
 
 import Layout from '../../components/Layout';
@@ -50,11 +50,19 @@ export async function getStaticProps({ ...ctx }) {
   const client = initContentfulService();
   const { slug } = ctx.params; // params contains the post `slug`.
   const author = await client.getAuthorBySlug(slug);
+
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, next) =>
+        `<p>${next(node.content)}</p><br />`
+    }
+  };
+
   return {
     props: {
       author: {
         ...author,
-        bio: documentToHtmlString(author.bio),
+        bio: documentToHtmlString(author.bio, options),
       },
     },
   };

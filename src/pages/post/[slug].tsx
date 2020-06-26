@@ -1,4 +1,5 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import moment from 'moment';
 
 import Layout from '../../components/Layout';
@@ -27,11 +28,18 @@ export async function getStaticProps ({ ...ctx }) {
   const { slug } = ctx.params; // params contains the post `slug`.
   const article = await client.getArticleBySlug(slug);
 
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, next) =>
+        `<p>${next(node.content)}</p><br />`
+    }
+  };
+
   return {
     props: {
       article: {
         ...article,
-        body: documentToHtmlString(article.body),
+        body: documentToHtmlString(article.body, options),
       },
     },
   };
