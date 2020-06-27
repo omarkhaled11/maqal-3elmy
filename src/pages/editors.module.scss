@@ -32,12 +32,14 @@
   row-gap: $m1;
   display: grid;
 
-  @media only screen and (min-width: 768px) {
-    padding: $m4;
+  @media only screen and (max-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: $m3;
+    }
   }
 
-  &:not(:last-child) {
-    margin-bottom: $m3;
+  @media only screen and (min-width: 768px) {
+    padding: $m4;
   }
 
   &:before {
