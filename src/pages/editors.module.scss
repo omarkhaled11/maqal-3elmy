@@ -1,0 +1,52 @@
+@import '../theme/globals.scss';
+
+.content {
+  padding: 0 $m1;
+}
+
+.discipline_title {
+  margin: $m4 0;
+  text-align: center;
+  font-size: $h2;
+
+  @media only screen and (min-width: 768px) {
+    text-align: right;
+  }
+}
+
+.authors_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+    row-gap: $m3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    column-gap: $m1;
+  }
+}
+
+.author_card {
+  row-gap: $m1;
+  display: grid;
+  box-shadow: 0px 0px 20px -13px rgba(233, 75, 60, 0.8);
+  padding: $m4;
+
+  .author_image {
+    width: 15rem;
+    min-height: 15rem;
+    border-bottom: 1px solid $themeRed;
+  }
+
+  .author_name {
+    font-size: $h5;
+  }
+
+  .author_title {
+    font-size: $large;
+  }
+
+  @media only screen and (min-width: 768px) {
+  }
+}

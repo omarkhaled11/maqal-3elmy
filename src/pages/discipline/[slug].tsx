@@ -15,10 +15,10 @@ const Discipline = ({ disciplineData }) => {
     <Layout>
       <Head>
         <title>مقال علمي </title>
-        <meta charSet='utf-8' />
+        <meta charSet="utf-8" />
         <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0, user-scalable=no'
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no"
         />
       </Head>
       <div>
@@ -37,7 +37,7 @@ const Discipline = ({ disciplineData }) => {
   );
 };
 // This gets called at build time
-export async function getStaticProps ({ ...ctx }) {
+export async function getStaticProps({ ...ctx }) {
   const client = initContentfulService();
   const { slug } = ctx.params; // params contains the discipline `slug`.
   const disciplineData = await client.getDisciplineWithArticles(slug);
@@ -49,10 +49,10 @@ export async function getStaticProps ({ ...ctx }) {
   };
 }
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const client = initContentfulService();
   const slugs = await client.getDisciplinesSlugs();
-  const paths = slugs.map(slug => `/discipline/${slug}`); // create paths with `slug` param
+  const paths = slugs.map((slug) => `/discipline/${slug}`); // create paths with `slug` param
 
   return {
     paths,

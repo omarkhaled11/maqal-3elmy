@@ -11,8 +11,6 @@ export default class MyApp extends App {
     const client = initContentfulService();
     const disciplines = await client.getDisciplines();
 
-    // console.log(disciplines);
-
     return {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
@@ -22,7 +20,7 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, disciplines } = this.props;
+    const { Component, pageProps, disciplines = {} } = this.props;
 
     return (
       <>
