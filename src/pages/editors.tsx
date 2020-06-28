@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import initContentfulService from '../service/contentful';
 
 import Layout from '../components/Layout';
@@ -9,14 +7,6 @@ import styles from './editors.module.scss';
 const editors = ({ authors: { disciplines } }) => {
   return (
     <Layout>
-      <Head>
-        <title>مقال علمي</title>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no"
-        />
-      </Head>
 
       {disciplines.map((discipline) => {
         return (

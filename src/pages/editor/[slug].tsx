@@ -1,6 +1,5 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import Head from 'next/head';
 
 import Layout from '../../components/Layout';
 import initContentfulService from '../../service/contentful';
@@ -12,14 +11,6 @@ import styles from './editor.module.scss';
 const Editor = ({ author }) => {
   return (
     <Layout>
-      <Head>
-        <title>مقال علمي </title>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no"
-        />
-      </Head>
       <div className={styles.container}>
         <div className={styles.profile}>
           <img

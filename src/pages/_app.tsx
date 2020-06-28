@@ -1,6 +1,5 @@
 import App from 'next/app';
 import React from 'react';
-import NextSeo from 'next-seo';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -26,7 +25,7 @@ export default class MyApp extends App {
 
     return (
       <>
-        <NextSeo config={DEFAULT_SEO} />
+        <SEO />
         <Header disciplines={disciplines} />
         <Component {...pageProps} />
         <Footer />

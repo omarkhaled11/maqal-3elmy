@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import Layout from '../components/Layout';
 import Divider from '../components/Divider';
 
@@ -8,14 +6,6 @@ import styles from './about.module.scss';
 const About = () => {
   return (
     <Layout>
-      <Head>
-        <title>مقال علمي </title>
-        <meta charSet='utf-8' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0, user-scalable=no'
-        />
-      </Head>
       <Divider text='من نحن؟' />
       <div className={styles.text_container}>
         <p className={styles.text}>

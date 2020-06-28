@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import Layout from '../../components/Layout';
 import initContentfulService from '../../service/contentful';
 import ArticleList from '../../components/ArticleList';
@@ -13,14 +11,6 @@ const Discipline = ({ disciplineData }) => {
   } = disciplineData;
   return (
     <Layout>
-      <Head>
-        <title>مقال علمي </title>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no"
-        />
-      </Head>
       <div>
         <div className={styles.article_header_container}>
           <div className={styles.article_header}>
