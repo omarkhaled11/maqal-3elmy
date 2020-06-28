@@ -6,7 +6,7 @@ import ArticleList from '../components/ArticleList';
 
 import styles from './index.module.scss';
 
-const Home = ({ articles, disciplines }) => {
+const Home = ({ articles }) => {
   return (
     <Layout>
       <div className={styles.teaser}>

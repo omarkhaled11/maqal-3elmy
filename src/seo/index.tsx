@@ -1,11 +1,15 @@
 import Head from 'next/head';
 
+const TITLE = 'مقال علمي';
+const DESCRIPTION =  'مقال علمي هي مبادرة علمية رائدة تحوي على أكتر من ١٠٠ باحث و باحثة يعملون في كبرى الجامعات و المعاهد البحثية يبسطون مقالات علمية نُشرت في دوريات علمية مرموقة.';
+const URL = 'https://maqalelmy.org';
+
 export const SEO = ({
-  description = 'مقال علمي',
-  title = 'مقال علمي',
+  description = DESCRIPTION,
+  title = TITLE,
   type = 'website',
-  url = '',
-  thumbnail = 'http://euro-travel-example.com/thumbnail.jpg',
+  url = URL,
+  thumbnail = `${URL}/logo/maqalelmy-logo.png`,
 }) => (
   <Head>
     <title>{title}</title>
@@ -18,8 +22,8 @@ export const SEO = ({
     <meta property='og:url' content={url} />
     <meta name='twitter:card' content='summary' />
 
-    <meta property='og:site_name' content='مقال علمي' />
-    <meta name='twitter:image:alt' content='مقال علمي' />
+    <meta property='og:site_name' content={TITLE} />
+    <meta name='twitter:image:alt' content={TITLE} />
 
     <meta charSet='utf-8' />
     <meta

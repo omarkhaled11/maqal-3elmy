@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import styles from './ArticleCard.module.scss';
 
-const ArticleCard = ({ article, maxWidth }) => {
+const ArticleCard = ({ article, maxWidth = false }) => {
   const { title, slug, discipline, readingTimeInMinutes } = article;
 
   return (

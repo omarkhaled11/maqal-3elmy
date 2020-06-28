@@ -54,9 +54,22 @@ const ArticleHeader = ({ article }) => {
         <div className={styles.info_row}>
           <div className={styles.info_label}>
             المدققين اللغويين:{' '}
-            <span className={styles.info_value}>
-              {linguistics.filter(a => a).map(editor => editor.name)}
+            {linguistics
+                .filter(a => a)
+                .map((author, index) =>
+            <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
+              <a>
+                <span className={`${styles.info_value} ${styles.author_link}`}>
+                  {index === linguistics.length - 1
+                    ? author.name
+                    : `${author.name} / `}
             </span>
+            </a>
+            </Link>
+                )}
+            {/* <span className={styles.info_value}>
+              {linguistics.filter(a => a).map(editor => editor.name)}
+            </span> */}
           </div>
         </div>
         <div className={styles.info_row}>
