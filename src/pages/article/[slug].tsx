@@ -48,7 +48,7 @@ export async function getStaticProps ({ ...ctx }) {
 export async function getStaticPaths () {
   const client = initContentfulService();
   const slugs = await client.getArticlesSlugs();
-  const paths = slugs.map(slug => `/post/${slug}`); // create paths with `slug` param
+  const paths = slugs.map(slug => `/article/${slug}`); // create paths with `slug` param
 
   return {
     paths,

@@ -1,11 +1,10 @@
 @import '../theme/globals.scss';
 
 .header {
+  display: flex;
   -moz-box-shadow: 0 25px 22px -45px rgba(233, 75, 60, 0.8);
   -webkit-box-shadow: 0 25px 22px -45px rgba(233, 75, 60, 0.8);
   box-shadow: 0 30px 48px -50px rgba(233, 75, 60, 0.8);
-  padding-top: $m2;
-  padding-bottom: $m2;
   height: $navbarHeight;
 }
 
@@ -20,6 +19,9 @@
   @media only screen and (min-width: 768px) {
     width: 1064px;
   }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .logo {
@@ -31,9 +33,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $secondary;
+  border: 2px solid $secondary;
   padding: 0 $m1_half;
   height: $m4;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 10;
 }
 
 .menu_button_icon {

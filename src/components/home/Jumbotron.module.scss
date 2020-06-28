@@ -39,6 +39,10 @@
   align-items: center;
   font-size: $h5;
 
+  @media only screen and (min-width: 768px) {
+    padding: $m5 0;
+  }
+
   &:after {
     display: block;
     margin-right: $m_half;

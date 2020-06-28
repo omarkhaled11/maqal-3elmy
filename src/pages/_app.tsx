@@ -1,6 +1,7 @@
 import App from 'next/app';
 import React from 'react';
 
+import AppLayout from '../components/AppLayout';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -27,7 +28,9 @@ export default class MyApp extends App {
       <>
         <SEO />
         <Header disciplines={disciplines} />
-        <Component {...pageProps} />
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
         <Footer />
       </>
     );

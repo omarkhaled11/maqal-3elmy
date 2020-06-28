@@ -6,7 +6,7 @@ const ArticleCard = ({ article, maxWidth = false }) => {
   const { title, slug, discipline, readingTimeInMinutes } = article;
 
   return (
-    <Link href="/post/[slug]" as={`/post/${slug}`}>
+    <Link href="/article/[slug]" as={`/article/${slug}`}>
       <div className={`${styles.container} ${maxWidth && styles.maxWidth}`}>
         <div className={styles.discipline}>{discipline?.disciplineName}</div>
         <div className={styles.title}>{title}</div>
