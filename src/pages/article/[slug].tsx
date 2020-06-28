@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 import ArticleHeader from '../../components/article/ArticleHeader';
 import initContentfulService from '../../service/contentful';
 
-import styles from './post.module.scss';
+import styles from './article.module.scss';
 
 moment.locale('ar');
 

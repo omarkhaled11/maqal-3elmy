@@ -15,6 +15,9 @@ export const SEO = ({
     <title>{title}</title>
     <meta name='description' content={description} />
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
     <meta property='og:type' content={type} />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />

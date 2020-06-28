@@ -15,9 +15,9 @@ const editors = ({ authors: { disciplines } }) => {
               {discipline?.disciplineName}
             </h1>
             <div className={styles.authors_list}>
-              {discipline.authors.map((author) => {
+              {discipline.authors.map((author, index) => {
                 return (
-                  <div className={styles.author_card}>
+                  <div className={styles.author_card} key={index}>
                     <img
                       className={styles.author_image}
                       src={author?.authorImage?.fields?.file?.url}
