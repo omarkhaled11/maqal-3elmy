@@ -64,49 +64,61 @@ const About = () => {
         </p>
         <br />
         <p className={styles.text} style={{ direction: 'ltr' }}>
-          Nature (<a href='https://www.nature.com'>https://www.nature.com</a>){' '}
-          <br />
+          Nature (
+          <a href='https://www.nature.com' rel='nofollow'>
+            https://www.nature.com
+          </a>
+          ) <br />
           Science (
-          <a href='https://www.sciencemag.org'>
+          <a href='https://www.sciencemag.org' rel='nofollow'>
             https://www.sciencemag.org
-          </a>) <br />
-          ‏Cell (<a href='https://www.cell.com'>https://www.cell.com</a>) <br />
+          </a>
+          ) <br />
+          ‏Cell (
+          <a href='https://www.cell.com' rel='nofollow'>
+            https://www.cell.com
+          </a>
+          ) <br />
           ‏Nature Nanotechnology (
-          <a href='https://www.nature.com/nnano'>
+          <a href='https://www.nature.com/nnano' rel='nofollow'>
             https://www.nature.com/nnano
           </a>
           ) <br />
           Nature Neuroscience (
-          <a href='https://www.nature.com/neuro'>
+          <a href='https://www.nature.com/neuro' rel='nofollow'>
             https://www.nature.com/neuro
           </a>
           ) <br />
           Nature Machine Intelligence (
-          <a href='https://www.nature.com/natmachintell'>
+          <a href='https://www.nature.com/natmachintell' rel='nofollow'>
             https://www.nature.com/natmachintell
           </a>
           ) <br />
           ‏Nature Communications (
-          <a href='https://www.nature.com/ncomms'>
+          <a href='https://www.nature.com/ncomms' rel='nofollow'>
             https://www.nature.com/ncomms
           </a>
           ) <br />
           Cell reports (
-          <a href='https://www.cell.com/cell-reports/home'>
+          <a href='https://www.cell.com/cell-reports/home' rel='nofollow'>
             https://www.cell.com/cell-reports/home
           </a>
           ) <br />
           ‏Science advances (
-          <a href='https://advances.sciencemag.org'>
+          <a href='https://advances.sciencemag.org' rel='nofollow'>
             https://advances.sciencemag.org
           </a>
           ) <br />
           ‏eLife (
-          <a href='https://www.elifesciences.org'>
+          <a href='https://www.elifesciences.org' rel='nofollow'>
             https://www.elifesciences.org
           </a>
           ) ‏<br />
-          PNAS (<a href='https://www.pnas.org'>https://www.pnas.org</a>)
+          PNAS (
+          <a href='https://www.pnas.org' rel='nofollow'>
+            https://www.pnas.org
+          </a>
+          )
         </p>
         <div className={styles.button_group}>
           <button>محررينا</button>
