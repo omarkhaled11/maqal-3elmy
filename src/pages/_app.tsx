@@ -22,7 +22,7 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, disciplines = {} } : any = this.props;
+    const { Component, pageProps, disciplines = {} }: any = this.props;
 
     return (
       <>
@@ -31,7 +31,7 @@ export default class MyApp extends App {
         <AppLayout>
           <Component {...pageProps} />
         </AppLayout>
-        <Footer />
+        <Footer disciplines={disciplines} />
       </>
     );
   }
