@@ -31,6 +31,9 @@
 .author_card {
   row-gap: $m1;
   display: grid;
+  box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+    12px 0 15px -15px rgba(233, 75, 60, 0.8),
+    -12px 0 15px -15px rgba(233, 75, 60, 0.8);
 
   @media only screen and (max-width: 768px) {
     &:not(:last-child) {
@@ -40,15 +43,6 @@
 
   @media only screen and (min-width: 768px) {
     padding: $m4;
-  }
-
-  &:before {
-    box-shadow: 0px 0px 20px -13px rgba(233, 75, 60, 0.8);
-    left: -15px;
-  }
-  &:after {
-    box-shadow: 0px 0px 20px -13px rgba(233, 75, 60, 0.8);
-    right: -15px;
   }
 
   .author_image {
