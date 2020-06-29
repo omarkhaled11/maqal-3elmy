@@ -32,8 +32,8 @@
   row-gap: $m1;
   display: grid;
   box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
-    12px 0 15px -15px rgba(233, 75, 60, 0.8),
-    -12px 0 15px -15px rgba(233, 75, 60, 0.8);
+    12px 0 15px -20px rgba(233, 75, 60, 0.8),
+    -12px 0 15px -20px rgba(233, 75, 60, 0.8);
 
   @media only screen and (max-width: 768px) {
     &:not(:last-child) {
