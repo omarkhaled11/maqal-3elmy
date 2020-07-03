@@ -17,6 +17,7 @@ const initContentfulService = () => {
   const getArticles = async () => {
     const data = await client.getEntries({
       content_type: CONTENT_TYPE_BLOGPOST,
+      limit: 8,
       // select: 'fields.title,fields.slug'
     });
 
