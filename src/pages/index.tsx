@@ -14,13 +14,9 @@ const Home = ({ articles }) => {
         className={styles.backgroundImage}
       />
       <Layout>
-        <div className={styles.teaser}>
-          <Jumbotron />
-        </div>
-        <div>
-          <Divider text='صدر حديثا' />
-          <ArticleList articles={articles} />
-        </div>
+        <Jumbotron />
+        <Divider text='صدر حديثا' />
+        <ArticleList articles={articles} />
       </Layout>
     </>
   );
