@@ -5,6 +5,12 @@
   flex-direction: column;
   height: 85vh;
   justify-content: space-between;
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+  }
 }
 
 .text {
@@ -42,9 +48,12 @@
   align-self: flex-start;
   font-size: $h5;
   margin: $m2 0;
+  cursor: pointer;
 
   @media only screen and (min-width: 768px) {
-    padding: $m3 0;
+    width: 50%;
+    margin: $m2 0;
+    padding: $m1 0;
   }
 
   &:after {
@@ -63,6 +72,7 @@
   margin: $m3 0;
 
   &:after {
+    cursor: pointer;
     display: block;
     margin-right: $m_half;
     background: url('/icons/arrow-down.svg') no-repeat 0px 0px;

@@ -9,6 +9,7 @@
   padding: $smallMargin;
   flex: 1 0;
   word-wrap: break-word;
+  min-height: 310px;
 
   @media only screen and (min-width: 768px) {
     min-width: 15%;

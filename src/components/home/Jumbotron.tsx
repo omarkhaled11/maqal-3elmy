@@ -10,7 +10,11 @@ const ArticleCard = () => {
           نحن <span className={styles.text_red}>١٠٠</span> باحث و باحثة نكتب عن
           المقالات العلمية بشكل مبسط
         </p>
-        <p className={styles.read_more}>إقرأ المزيد</p>
+        <Link href='/about'>
+          <a>
+            <p className={styles.read_more}>إقرأ المزيد</p>
+          </a>
+        </Link>
       </div>
       <div className={styles.read_more_container}>
         <span className={styles.read_more_button}></span>
