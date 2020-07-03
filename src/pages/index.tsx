@@ -10,19 +10,19 @@ const Home = ({ articles }) => {
   return (
     <>
       <img
-        src='/images/home-background.png'
+        src="/images/home-background.png"
         className={styles.backgroundImage}
       />
       <Layout>
         <Jumbotron />
-        <Divider text='صدر حديثا' />
+        <Divider href="new_articles" text="صدر حديثا" />
         <ArticleList articles={articles} />
       </Layout>
     </>
   );
 };
 
-export const getStaticProps = async ctx => {
+export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
   const articles = await client.getArticles();
 

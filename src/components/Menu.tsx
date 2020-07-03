@@ -25,9 +25,24 @@ const Menu = ({ disciplines }) => {
     []
   );
 
+  const handleChange = (e) => {
+    if (event?.target?.checked) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+
+    return null;
+  };
+
   return (
     <div>
-      <input className={styles.input} type="checkbox" id="toggle" />
+      <input
+        className={styles.input}
+        type="checkbox"
+        id="toggle"
+        onChange={handleChange}
+      />
       <label
         className={cn(styles.label, styles.toggle_btn, styles.toggle_btn_cross)}
         htmlFor="toggle"
@@ -62,7 +77,10 @@ const Menu = ({ disciplines }) => {
               {naturalSciencesDisciplines.map((discipline) => {
                 return (
                   <li className={styles.item}>
-                    <a className={styles.link} href={`discipline/${discipline.slug}`}>
+                    <a
+                      className={styles.link}
+                      href={`discipline/${discipline.slug}`}
+                    >
                       {discipline.disciplineName}
                     </a>
                   </li>
@@ -76,7 +94,10 @@ const Menu = ({ disciplines }) => {
               {socialSciencesDisciplines.map((discipline) => {
                 return (
                   <li className={styles.item}>
-                    <a className={styles.link} href={`discipline/${discipline.slug}`}>
+                    <a
+                      className={styles.link}
+                      href={`discipline/${discipline.slug}`}
+                    >
                       {discipline.disciplineName}
                     </a>
                   </li>

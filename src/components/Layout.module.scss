@@ -1,6 +1,7 @@
 @import '../theme/globals.scss';
 
 .layout {
+  scroll-behavior: smooth;
   display: flex;
   flex: 1;
   flex-direction: column;

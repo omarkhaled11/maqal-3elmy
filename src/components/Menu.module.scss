@@ -20,6 +20,7 @@
 }
 
 .nav {
+  backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
   left: 0;
@@ -28,6 +29,7 @@
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 
   .list {
     display: flex;
@@ -38,6 +40,7 @@
     margin: auto;
     padding-bottom: $m1;
     list-style: none;
+    align-items: center;
 
     @media only screen and (min-width: 768px) {
       flex-direction: row;
@@ -129,11 +132,16 @@
   }
 
   .list {
-    border: 0;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    max-width: 50%;
-    margin: 0;
+    align-items: center;
+
+    @media only screen and (min-width: 768px) {
+      align-items: flex-start;
+      margin: 0;
+      border: 0;
+      max-width: 50%;
+    }
 
     .item {
       margin: 0;
@@ -145,10 +153,12 @@
     }
   }
 
-  .list:first-child {
-    border-left: 1px solid $primary;
-    margin-left: $m3;
-    padding-left: $m2;
+  @media only screen and (min-width: 768px) {
+    .list:first-child {
+      border-left: 1px solid $primary;
+      margin-left: $m3;
+      padding-left: $m2;
+    }
   }
 
   .cluster_title {
@@ -161,8 +171,18 @@
     display: grid;
     flex-direction: row;
     flex-wrap: wrap;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: $m3;
-    margin: $m1 0;
+    grid-template-columns: 1fr;
+    column-gap: $m1;
+    margin: $m1 auto;
+
+    @media only screen and (max-width: 768px) {
+      width: 70%;
+      text-align: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+      column-gap: $m3;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }
