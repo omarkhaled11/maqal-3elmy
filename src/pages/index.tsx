@@ -8,19 +8,25 @@ import styles from './index.module.scss';
 
 const Home = ({ articles }) => {
   return (
-    <Layout>
-      <div className={styles.teaser}>
-        <Jumbotron />
-      </div>
-      <div>
-        <Divider text="صدر حديثا" />
-        <ArticleList articles={articles} />
-      </div>
-    </Layout>
+    <>
+      <img
+        src='/images/home-background.png'
+        className={styles.backgroundImage}
+      />
+      <Layout>
+        <div className={styles.teaser}>
+          <Jumbotron />
+        </div>
+        <div>
+          <Divider text='صدر حديثا' />
+          <ArticleList articles={articles} />
+        </div>
+      </Layout>
+    </>
   );
 };
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps = async ctx => {
   const client = initContentfulService();
   const articles = await client.getArticles();
 
