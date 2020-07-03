@@ -12,7 +12,7 @@
 
 .profile {
   display: flex;
-  align-items: center;
+
   flex-direction: column;
   flex: 1.5;
 
@@ -31,12 +31,16 @@
   margin-bottom: $m2;
   max-width: 280px;
   margin-top: $m3;
+  @media only screen and (max-width: 768px) {
+    align-self: center;
+  }
 }
 
 .name {
-  font-size: $h4;
+  font-size: $h5;
   font-family: $bold;
   color: $primary;
+  margin-bottom: $m1;
 }
 
 .country {

@@ -8,6 +8,9 @@ import ArticleCard from '../../components/ArticleCard';
 
 import styles from './editor.module.scss';
 
+const DEFAULT_IMAGE =
+  'http://images.ctfassets.net/w4277kmq5g68/6aUnuF6i6F6YZXLlZtUJqi/125baca0f06b898ff79c086a57fecd07/man_figure-01.png';
+
 const Editor = ({ author }) => {
   return (
     <Layout>
@@ -15,17 +18,21 @@ const Editor = ({ author }) => {
         <div className={styles.profile}>
           <img
             className={styles.image}
-            src={author?.authorImage?.fields?.file?.url}
-            alt=""
+            src={author?.authorImage?.fields?.file?.url || DEFAULT_IMAGE}
+            alt=''
           />
-          <div className={styles.name}>{author?.name}</div>
+          <h1 className={styles.name}>{author?.name}</h1>
           <div className={styles.country}>{author?.country}</div>
           <div className={styles.title}>{author?.title}</div>
-          <Divider text="مشاركات المحرر" size="small" />
           <div className={styles.articleList}>
-            {author?.authorArticles?.map((entry) => (
-              <ArticleCard maxWidth article={entry?.fields} />
-            ))}
+            {author?.authorArticles?.length > 0 && (
+              <>
+                <Divider text='مشاركات المحرر' size='small' />
+                {author?.authorArticles?.map(entry => (
+                  <ArticleCard maxWidth article={entry?.fields} />
+                ))}
+              </>
+            )}
           </div>
         </div>
         <div className={styles.info}>
@@ -37,16 +44,15 @@ const Editor = ({ author }) => {
   );
 };
 
-export async function getStaticProps({ ...ctx }) {
+export async function getStaticProps ({ ...ctx }) {
   const client = initContentfulService();
   const { slug } = ctx.params; // params contains the post `slug`.
   const author = await client.getAuthorBySlug(slug);
 
   const options = {
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, next) =>
-        `<p>${next(node.content)}</p><br />`
-    }
+      [BLOCKS.PARAGRAPH]: (node, next) => `<p>${next(node.content)}</p><br />`,
+    },
   };
 
   return {
@@ -59,10 +65,10 @@ export async function getStaticProps({ ...ctx }) {
   };
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const client = initContentfulService();
   const slugs = await client.getAuthorsSlugs();
-  const paths = slugs.map((slug) => `/editor/${slug}`); // create paths with `slug` param
+  const paths = slugs.map(slug => `/editor/${slug}`); // create paths with `slug` param
 
   return {
     paths,

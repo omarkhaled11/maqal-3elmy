@@ -36,41 +36,44 @@ const ArticleHeader = ({ article }) => {
         <div className={styles.info_row}>
           <div className={styles.info_label}>
             المحررين:{' '}
-              {authors
-                .filter(a => a)
-                .map((author, index) =>
-            <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
-              <a>
-                <span className={`${styles.info_value} ${styles.author_link}`}>
-                  {index === authors.length - 1
-                    ? author.name
-                    : `${author.name} / `}
-            </span>
-            </a>
-            </Link>
-                )}
+            {authors
+              .filter(a => a)
+              .map((author, index) => (
+                <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
+                  <a>
+                    <span
+                      className={`${styles.info_value} ${styles.author_link}`}
+                    >
+                      {index === authors.length - 1
+                        ? author.name
+                        : `${author.name} / `}
+                    </span>
+                  </a>
+                </Link>
+              ))}
           </div>
         </div>
         <div className={styles.info_row}>
-          <div className={styles.info_label}>
-            المدققين اللغويين:{' '}
-            {linguistics
+          {linguistics && linguistics.length > 0 && (
+            <div className={styles.info_label}>
+              المدققين اللغويين:{' '}
+              {linguistics
                 .filter(a => a)
-                .map((author, index) =>
-            <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
-              <a>
-                <span className={`${styles.info_value} ${styles.author_link}`}>
-                  {index === linguistics.length - 1
-                    ? author.name
-                    : `${author.name} / `}
-            </span>
-            </a>
-            </Link>
-                )}
-            {/* <span className={styles.info_value}>
-              {linguistics.filter(a => a).map(editor => editor.name)}
-            </span> */}
-          </div>
+                .map((author, index) => (
+                  <Link href={author.slug ? `/editor/${author.slug}` : `#`}>
+                    <a>
+                      <span
+                        className={`${styles.info_value} ${styles.author_link}`}
+                      >
+                        {index === linguistics.length - 1
+                          ? author.name
+                          : `${author.name} / `}
+                      </span>
+                    </a>
+                  </Link>
+                ))}
+            </div>
+          )}
         </div>
         <div className={styles.info_row}>
           <div className={styles.info_label}>
