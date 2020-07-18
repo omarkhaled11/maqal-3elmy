@@ -3,6 +3,7 @@ import Link from 'next/link';
 import initContentfulService from '../service/contentful';
 
 import Layout from '../components/Layout';
+import { DEFAULT_PROFILE_IMAGE } from '../data/constants';
 
 import styles from './editors.module.scss';
 
@@ -22,7 +23,7 @@ const editors = ({ authors: { disciplines } }) => {
                     <a className={styles.author_card} key={index}>
                       <img
                         className={styles.author_image}
-                        src={author?.authorImage?.fields?.file?.url}
+                        src={author?.authorImage?.fields?.file?.url || DEFAULT_PROFILE_IMAGE}
                         alt=""
                       />
                       <span className={styles.author_name}>{author?.name}</span>

@@ -5,11 +5,9 @@ import Layout from '../../components/Layout';
 import initContentfulService from '../../service/contentful';
 import Divider from '../../components/Divider';
 import ArticleCard from '../../components/ArticleCard';
+import { DEFAULT_PROFILE_IMAGE } from '../../data/constants';
 
 import styles from './editor.module.scss';
-
-const DEFAULT_IMAGE =
-  'http://images.ctfassets.net/w4277kmq5g68/6aUnuF6i6F6YZXLlZtUJqi/125baca0f06b898ff79c086a57fecd07/man_figure-01.png';
 
 const Editor = ({ author }) => {
   return (
@@ -18,7 +16,7 @@ const Editor = ({ author }) => {
         <div className={styles.profile}>
           <img
             className={styles.image}
-            src={author?.authorImage?.fields?.file?.url || DEFAULT_IMAGE}
+            src={author?.authorImage?.fields?.file?.url || DEFAULT_PROFILE_IMAGE}
             alt=''
           />
           <h1 className={styles.name}>{author?.name}</h1>
@@ -35,10 +33,12 @@ const Editor = ({ author }) => {
             )}
           </div>
         </div>
-        <div className={styles.info}>
-          <h1 className={styles.title}>السيرة الذاتية</h1>
-          <div dangerouslySetInnerHTML={{ __html: author?.bio }} />
-        </div>
+        {!!author.bio &&
+          <div className={styles.info}>
+            <h1 className={styles.title}>السيرة الذاتية</h1>
+            <div dangerouslySetInnerHTML={{ __html: author?.bio }} />
+          </div>
+        }
       </div>
     </Layout>
   );
