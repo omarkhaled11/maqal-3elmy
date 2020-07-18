@@ -64,14 +64,14 @@ const Menu = ({ disciplines }) => {
             </a>
           </li>
 
-          <li className={styles.item}>
+          {/* <li className={styles.item}>
             <a className={styles.link} href="/contact">
               تواصل معنا
             </a>
-          </li>
+          </li> */}
         </ul>
         <div className={styles.sub_nav}>
-          <ul className={styles.list}>
+          <ul className={styles.list} style={{ maxWidth: '80%' }}>
             <span className={styles.cluster_title}>العلوم الطبيعية</span>
             <div className={styles.cluster_items}>
               {naturalSciencesDisciplines.map((discipline) => {
@@ -88,7 +88,7 @@ const Menu = ({ disciplines }) => {
               })}
             </div>
           </ul>
-          <ul className={styles.list}>
+          <ul className={styles.list} style={{ maxWidth: '20%' }}>
             <span className={styles.cluster_title}>العلوم الإجتماعية</span>
             <div className={styles.cluster_items}>
               {socialSciencesDisciplines.map((discipline) => {

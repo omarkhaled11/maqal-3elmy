@@ -27,8 +27,13 @@
     background: none;
     padding: $m1;
     width: 100%;
-    font-family: $bold;
-    font-size: $medium;
+
+    a {
+      font-family: $bold;
+      font-size: $medium;
+      text-decoration: inherit;
+      color: inherit;
+    }
 
     &:first-child {
       margin-bottom: $m1;

@@ -148,7 +148,7 @@
 
       .link {
         padding: 0;
-        font-size: $medium;
+        font-size: $small;
       }
     }
   }
@@ -167,7 +167,7 @@
   }
 
   .cluster_items {
-    row-gap: $m1;
+    row-gap: $m2;
     display: grid;
     flex-direction: row;
     flex-wrap: wrap;

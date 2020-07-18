@@ -2,6 +2,8 @@ import Layout from '../components/Layout';
 import Divider from '../components/Divider';
 
 import styles from './about.module.scss';
+import initContentfulService from '../service/contentful';
+import Link from 'next/link';
 
 const About = () => {
   return (
@@ -111,12 +113,29 @@ const About = () => {
           )
         </p>
         <div className={styles.button_group}>
-          <button>محررينا</button>
-          <button>عن المطورين</button>
+        <button>
+          <Link href='/editors'>
+            <a>
+              محررينا
+            </a>
+          </Link>
+          </button>
+          {/* <button>
+          <Link href='#'>
+            <a>
+              عن المطورين
+            </a>
+          </Link>
+          </button> */}
         </div>
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps = async ctx => {
+  initContentfulService();
+  return { props: {} };
 };
 
 export default About;
