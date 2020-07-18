@@ -26,6 +26,7 @@ const Menu = ({ disciplines }) => {
   );
 
   const handleChange = (e) => {
+    // @ts-ignore
     if (event?.target?.checked) {
       document.body.style.overflow = 'hidden';
     } else {
