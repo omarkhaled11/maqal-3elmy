@@ -2,12 +2,15 @@
 
 .content {
   padding: 0 $m1;
+  margin-bottom: $m3;
 }
 
 .discipline_title {
   margin: $m4 0;
   text-align: center;
-  font-size: $h2;
+  font-family: $bold;
+  color: $primary;
+  font-size: $h4;
 
   @media only screen and (min-width: 768px) {
     text-align: right;
@@ -64,7 +67,9 @@
   }
 
   .author_name {
-    font-size: $h5;
+    font-size: $h6;
+    color: $primary;
+    font-family: $bold;
     justify-self: center;
 
     @media only screen and (min-width: 768px) {
@@ -73,7 +78,8 @@
   }
 
   .author_title {
-    font-size: $medium;
+    font-size: $small;
+    color: $themeRed;
     justify-self: center;
 
     @media only screen and (min-width: 768px) {
