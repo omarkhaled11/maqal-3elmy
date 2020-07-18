@@ -54,6 +54,9 @@
 
 .footer_head {
   margin: $m3 0;
+  @media only screen and (max-width: 768px) {
+    margin: $m1 $m2;
+  }
 }
 
 .footer_head_text {
