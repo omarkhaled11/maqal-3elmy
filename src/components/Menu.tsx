@@ -25,7 +25,7 @@ const Menu = ({ disciplines }) => {
     []
   );
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     // @ts-ignore
     if (event?.target?.checked) {
       document.body.style.overflow = 'hidden';
@@ -40,13 +40,13 @@ const Menu = ({ disciplines }) => {
     <div>
       <input
         className={styles.input}
-        type="checkbox"
-        id="toggle"
+        type='checkbox'
+        id='toggle'
         onChange={handleChange}
       />
       <label
         className={cn(styles.label, styles.toggle_btn, styles.toggle_btn_cross)}
-        htmlFor="toggle"
+        htmlFor='toggle'
       >
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>
@@ -55,12 +55,12 @@ const Menu = ({ disciplines }) => {
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <a className={styles.link} href="/about">
+            <a className={styles.link} href='/about'>
               من نحن
             </a>
           </li>
           <li className={styles.item}>
-            <a className={styles.link} href="/editors">
+            <a className={styles.link} href='/editors'>
               محررينا
             </a>
           </li>
@@ -75,7 +75,7 @@ const Menu = ({ disciplines }) => {
           <ul className={styles.list} style={{ maxWidth: '80%' }}>
             <span className={styles.cluster_title}>العلوم الطبيعية</span>
             <div className={styles.cluster_items}>
-              {naturalSciencesDisciplines.map((discipline) => {
+              {naturalSciencesDisciplines.map(discipline => {
                 return (
                   <li className={styles.item}>
                     <a
@@ -92,7 +92,7 @@ const Menu = ({ disciplines }) => {
           <ul className={styles.list} style={{ maxWidth: '20%' }}>
             <span className={styles.cluster_title}>العلوم الإجتماعية</span>
             <div className={styles.cluster_items}>
-              {socialSciencesDisciplines.map((discipline) => {
+              {socialSciencesDisciplines.map(discipline => {
                 return (
                   <li className={styles.item}>
                     <a
