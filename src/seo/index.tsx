@@ -9,7 +9,7 @@ export const SEO = ({
   title = TITLE,
   type = 'website',
   url = URL,
-  thumbnail = `${URL}/logo/maqalelmy-logo.png`,
+  thumbnail = `${URL}/logo/Logo_R.png`,
 }) => (
   <Head>
     <title>{title}</title>

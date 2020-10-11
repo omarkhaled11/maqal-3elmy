@@ -7,14 +7,14 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
     direction: rtl;
     @font-face {
-      font-family: 'Tajawal-Regular';
-      src: url('/fonts/Tajawal-Regular.ttf');
+      font-family: 'Dubai-Regular';
+      src: url('/fonts/Dubai-Regular.ttf');
     }
     @font-face {
-      font-family: 'Tajawal-Bold';
-      src: url('/fonts/Tajawal-Bold.ttf');
+      font-family: 'Dubai-Bold';
+      src: url('/fonts/Dubai-Bold.ttf');
     }
-    font-family: 'Tajawal-Regular';
+    font-family: 'Dubai-Regular';
   }
 `;
 
