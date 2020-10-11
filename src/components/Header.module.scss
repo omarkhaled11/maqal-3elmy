@@ -25,15 +25,13 @@
 }
 
 .logo {
-  width: 5rem;
-  height: 5rem;
+  height: 3rem;
 }
 
 .menu_button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $secondary;
   padding: 0 $m1_half;
   height: $m4;
   background: rgba(255, 255, 255, 0.8);

@@ -80,7 +80,7 @@ const Menu = ({ disciplines }) => {
                   <li className={styles.item}>
                     <a
                       className={styles.link}
-                      href={`discipline/${discipline.slug}`}
+                      href={`/discipline/${discipline.slug}`}
                     >
                       {discipline.disciplineName}
                     </a>
@@ -97,7 +97,7 @@ const Menu = ({ disciplines }) => {
                   <li className={styles.item}>
                     <a
                       className={styles.link}
-                      href={`discipline/${discipline.slug}`}
+                      href={`/discipline/${discipline.slug}`}
                     >
                       {discipline.disciplineName}
                     </a>

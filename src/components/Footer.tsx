@@ -55,7 +55,7 @@ const Footer = ({ disciplines }) => {
           <div className={styles.links_column}>
             {disciplinesArrays1.map(discipline => {
               return (
-                <Link href={`discipline/${discipline.slug}`}>
+                <Link href={`/discipline/${discipline.slug}`}>
                   <a>{discipline.disciplineName}</a>
                 </Link>
               );
@@ -64,14 +64,14 @@ const Footer = ({ disciplines }) => {
           <div className={styles.links_column}>
             {disciplinesArrays2.map(discipline => {
               return (
-                <Link href={`discipline/${discipline.slug}`}>
+                <Link href={`/discipline/${discipline.slug}`}>
                   <a>{discipline.disciplineName}</a>
                 </Link>
               );
             })}
             {socialSciencesDisciplines.map(discipline => {
               return (
-                <Link href={`discipline/${discipline.slug}`}>
+                <Link href={`/discipline/${discipline.slug}`}>
                   <a>{discipline.disciplineName}</a>
                 </Link>
               );
