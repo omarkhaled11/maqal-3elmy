@@ -11,27 +11,27 @@ import styles from './Jumbotron.module.scss';
 const ArticleCard = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.text_container}>
-        <p className={styles.text}>
-          نحن <span className={styles.text_red}>١٠٠</span> باحث و باحثة نكتب عن
-          المقالات العلمية بشكل مبسط
-        </p>
-        <Link href="/about">
-          <a>
-            <p className={styles.read_more}>إقرأ المزيد</p>
-          </a>
-        </Link>
+      <div className={styles.background_image_container}>
+        <img src='/images/1.png' className={styles.background_image} />
       </div>
-      <ScrollLink
-        className={styles.read_more_container}
-        hashSpy={true}
-        smooth={true}
-        spy={true}
-        isDynamic={true}
-        to="new_articles"
-      >
-        <span className={styles.read_more_button}></span>
-      </ScrollLink>
+
+      <div className={styles.text_container}>
+        <div className={styles.title_text_container}>
+          <p className={styles.title_text}>
+            نحن  باحث و باحثة نكتب عن
+            المقالات العلمية بشكل مبسط
+          </p>
+        </div>
+        <div className={styles.read_more_container}>
+          <Link href='/about'>
+            <a className={styles.read_more_link}>
+              <p className={styles.read_more_text}>إقرأ المزيد</p>
+              <div className={styles.arrow_icon} />
+            </a>
+          </Link>
+        </div>
+      </div>
+
     </div>
   );
 };
