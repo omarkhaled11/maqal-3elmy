@@ -1,10 +1,11 @@
-import { mapArticle, mapSlug, mapDiscipline, mapAuthor, mapIssue } from './helpers';
+import { mapArticle, mapSlug, mapDiscipline, mapAuthor, mapIssue, mapLandingPageData } from './helpers';
 const contentful = require('contentful');
 
 const CONTENT_TYPE_BLOGPOST = 'blogPost';
 const CONTENT_TYPE_DISCIPLINE = 'discipline';
 const CONTENT_TYPE_AUTHOR = 'author';
 const CONTENT_TYPE_ISSUE = 'issue';
+const CONTENT_TYPE_LANDING_PAGE = 'landingPage';
 
 const initContentfulService = () => {
   const client = contentful.createClient({
@@ -174,6 +175,16 @@ const initContentfulService = () => {
     return data.items.map(mapIssue);
   };
 
+  /**
+   * Get Landing Page data
+   */
+  const getLandingPage = async () => {
+    const data = await client.getEntries({
+      content_type: CONTENT_TYPE_LANDING_PAGE,
+    });
+    return mapLandingPageData(data);
+  };
+
   // export api calls
   return {
     getArticles,
@@ -188,6 +199,7 @@ const initContentfulService = () => {
     getAuthorsList,
     getDisciplineWithArticles,
     getIssues,
+    getLandingPage,
   };
 };
 

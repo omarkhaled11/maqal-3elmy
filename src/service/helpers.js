@@ -1,6 +1,5 @@
 export const mapArticle = (item) => {
   const { fields } = item;
-  console.log(fields)
   return {
     ...fields,
     discipline: {
@@ -65,4 +64,21 @@ const _getClusterReference = (cluster) => {
   return {
     ...fields,
   }
+}
+
+export const mapLandingPageData = (data) => {
+  let landingPageData = {};
+  if (!data.items || data.items.length === 0) return landingPageData;
+  const { fields } = data?.items[0];
+
+  landingPageData = {
+    mainArticle: fields?.mainArticle?.fields,
+    firstArticle: fields?.firstArticle?.fields,
+    secondArticle: fields?.secondArticle?.fields,
+    thirdArticle: fields?.thirdArticle?.fields,
+    fourthArticle: fields?.fourthArticle?.fields,
+    moreArticleList: fields['moreArticlesList']?.map(mapArticle),
+  }
+
+  return landingPageData;
 }
