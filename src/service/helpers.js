@@ -1,5 +1,6 @@
 export const mapArticle = (item) => {
   const { fields } = item;
+  console.log(fields)
   return {
     ...fields,
     discipline: {
@@ -7,6 +8,14 @@ export const mapArticle = (item) => {
     },
     authors: _getAuthorsReference(fields['authors']),
     linguistics: _getAuthorsReference(fields['linguistics']),
+  }
+}
+
+export const mapIssue = (item) => {
+  const { fields } = item;
+  return {
+    ...fields,
+    articles: fields['articles']?.map(mapArticle),
   }
 }
 
