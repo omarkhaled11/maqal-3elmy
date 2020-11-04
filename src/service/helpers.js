@@ -82,3 +82,9 @@ export const mapLandingPageData = (data) => {
 
   return landingPageData;
 }
+
+export const getBoardMembers = (data) => {
+  if (!data.items || data.items.length === 0) return [];
+  const authors = data.items.filter(a => a?.fields?.isBoardMember);
+  return authors.map(mapAuthor);
+}

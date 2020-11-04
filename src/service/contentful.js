@@ -1,4 +1,12 @@
-import { mapArticle, mapSlug, mapDiscipline, mapAuthor, mapIssue, mapLandingPageData } from './helpers';
+import {
+  mapArticle,
+  mapSlug,
+  mapDiscipline,
+  mapAuthor,
+  mapIssue,
+  mapLandingPageData,
+  getBoardMembers,
+} from './helpers';
 const contentful = require('contentful');
 
 const CONTENT_TYPE_BLOGPOST = 'blogPost';
@@ -136,14 +144,14 @@ const initContentfulService = () => {
   const getAuthorsList = async () => {
     const disciplines = await getDisciplines();
     return {
-      disciplines: disciplines.filter(d => d?.authors?.length !== 0)
-    }
+      disciplines: disciplines.filter(d => d?.authors?.length !== 0),
+    };
   };
 
   /**
    * Get all disciplines with related articles
    */
-  const getDisciplineWithArticles = async (slug) => {
+  const getDisciplineWithArticles = async slug => {
     const discipline = await getDisciplineBySlug(slug);
 
     const articlesData = await client.getEntries({
@@ -155,7 +163,7 @@ const initContentfulService = () => {
     let articles = [];
     if (articlesData.items && articlesData.items.length > 0) {
       articles = articlesData.items.map(mapArticle);
-    };
+    }
 
     return {
       discipline: discipline || [],
@@ -185,6 +193,16 @@ const initContentfulService = () => {
     return mapLandingPageData(data);
   };
 
+  /**
+   * Get all authors under disciplines
+   */
+  const getBoardMembersList = async () => {
+    const data = await client.getEntries({
+      content_type: CONTENT_TYPE_AUTHOR,
+    });
+    return getBoardMembers(data);
+  };
+
   // export api calls
   return {
     getArticles,
@@ -200,6 +218,7 @@ const initContentfulService = () => {
     getDisciplineWithArticles,
     getIssues,
     getLandingPage,
+    getBoardMembersList,
   };
 };
 
