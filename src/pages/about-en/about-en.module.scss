@@ -1,9 +1,10 @@
-@import '../theme/globals.scss';
+@import '../../theme/globals.scss';
 
 .text {
   text-align: justify;
   font-size: $medium;
   line-height: $m2_half;
+  direction: ltr;
 }
 
 .text_container {
