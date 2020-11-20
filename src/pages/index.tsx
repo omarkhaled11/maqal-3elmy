@@ -4,19 +4,20 @@ import initContentfulService from '../service/contentful';
 import Divider from '../components/Divider';
 import ArticleList from '../components/ArticleList';
 
-import styles from './index.module.scss';
+import ArticleArtworkList from '../components/home/ArticleArtworkList';
 
-const Home = ({ articles }) => {
+const Home = ({ articles, landingArticles }) => {
+  const { mainArticle } = landingArticles;
+  const { firstArticle, secondArticle, thirdArticle, fourthArticle } = landingArticles;
+  const artworkArticles = [firstArticle, secondArticle, thirdArticle, fourthArticle].filter(x => x);
+  const { moreArticleList} = landingArticles;
   return (
     <>
-      <img
-        src="/images/home-background.png"
-        className={styles.backgroundImage}
-      />
+        <Jumbotron article={mainArticle} fullHeight />
+        <ArticleArtworkList articles={artworkArticles} />
       <Layout>
-        <Jumbotron />
         <Divider href="new_articles" text="صدر حديثا" />
-        <ArticleList articles={articles} />
+        <ArticleList articles={moreArticleList} />
       </Layout>
     </>
   );
@@ -25,10 +26,12 @@ const Home = ({ articles }) => {
 export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
   const articles = await client.getArticles();
-
+  const landingArticles = await client.getLandingPage();
+  console.log(landingArticles);
   return {
     props: {
       articles,
+      landingArticles,
     },
   };
 };
