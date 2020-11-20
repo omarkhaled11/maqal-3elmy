@@ -92,9 +92,9 @@ const Menu = ({ disciplines }) => {
           <ul className={styles.list} style={{ maxWidth: '20%' }}>
             <span className={styles.cluster_title}>العلوم الإجتماعية</span>
             <div className={styles.cluster_items}>
-              {socialSciencesDisciplines.map(discipline => {
+              {socialSciencesDisciplines.map((discipline, index) => {
                 return (
-                  <li className={styles.item}>
+                  <li className={styles.item} key={index}>
                     <a
                       className={styles.link}
                       href={`/discipline/${discipline.slug}`}

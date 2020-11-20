@@ -1,4 +1,5 @@
 export const mapArticle = item => {
+  if (!item) return null;
   const { fields } = item;
   const imageUrl = fields?.['heroImage']?.fields?.file?.url
     ? `https:${fields?.['heroImage']?.fields?.file?.url}`

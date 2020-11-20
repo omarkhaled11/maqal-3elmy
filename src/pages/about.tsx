@@ -48,70 +48,9 @@ const About = () => {
           يجعلهم على كفاءةٍ عاليةٍ، وقدرةٍ فائقةٍ، على تولي زمام المبادرة،
           والنهوض بها بين أرجاء وطننا العربي.
           <br />
-          <br />
-          وفيما يلي قائمةٌ ببعض الدوريات العلمية التي نعتمد عليها كمصدرٍ
-          للمقالات المنشورة، والتي يمكنكم الاطلاع عليها لمعرفة المزيد. كما يُرجي
-          الانتباه إلى أن هذه القائمة لا تشتمل بالضرورة على جميع الدوريات
-          العلمية التي قد نستعين بها، ولاسيما فيما يتعلق بالعلوم الاجتماعية.
+
         </p>
         <br />
-        <p className={styles.text} style={{ direction: 'ltr' }}>
-          Nature (
-          <a href='https://www.nature.com' rel='nofollow'>
-            https://www.nature.com
-          </a>
-          ) <br />
-          Science (
-          <a href='https://www.sciencemag.org' rel='nofollow'>
-            https://www.sciencemag.org
-          </a>
-          ) <br />
-          ‏Cell (
-          <a href='https://www.cell.com' rel='nofollow'>
-            https://www.cell.com
-          </a>
-          ) <br />
-          ‏Nature Nanotechnology (
-          <a href='https://www.nature.com/nnano' rel='nofollow'>
-            https://www.nature.com/nnano
-          </a>
-          ) <br />
-          Nature Neuroscience (
-          <a href='https://www.nature.com/neuro' rel='nofollow'>
-            https://www.nature.com/neuro
-          </a>
-          ) <br />
-          Nature Machine Intelligence (
-          <a href='https://www.nature.com/natmachintell' rel='nofollow'>
-            https://www.nature.com/natmachintell
-          </a>
-          ) <br />
-          ‏Nature Communications (
-          <a href='https://www.nature.com/ncomms' rel='nofollow'>
-            https://www.nature.com/ncomms
-          </a>
-          ) <br />
-          Cell reports (
-          <a href='https://www.cell.com/cell-reports/home' rel='nofollow'>
-            https://www.cell.com/cell-reports/home
-          </a>
-          ) <br />
-          ‏Science advances (
-          <a href='https://advances.sciencemag.org' rel='nofollow'>
-            https://advances.sciencemag.org
-          </a>
-          ) <br />
-          ‏eLife (
-          <a href='https://www.elifesciences.org' rel='nofollow'>
-            https://www.elifesciences.org
-          </a>
-          ) ‏<br />
-          PNAS (
-          <a href='https://www.pnas.org' rel='nofollow'>
-            https://www.pnas.org
-          </a>
-          )
-        </p>
         <div className={styles.button_group}>
         <button>
           <Link href='/editors'>
