@@ -64,12 +64,11 @@ const Menu = ({ disciplines }) => {
               محررينا
             </a>
           </li>
-
-          {/* <li className={styles.item}>
-            <a className={styles.link} href="/contact">
-              تواصل معنا
+          <li className={styles.item}>
+            <a className={styles.link} href="/about-en">
+              About
             </a>
-          </li> */}
+          </li>
         </ul>
         <div className={styles.sub_nav}>
           <ul className={styles.list} style={{ maxWidth: '80%' }}>
