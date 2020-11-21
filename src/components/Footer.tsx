@@ -104,7 +104,7 @@ const Footer = ({ disciplines }) => {
             />
           </a>
         </div>
-        <div className={styles.copyrights}>صمم شعار مقال علمي مروى شيخون </div>
+        {/* <div className={styles.copyrights}>صمم شعار مقال علمي مروى شيخون </div> */}
       </div>
     </footer>
   );
