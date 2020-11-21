@@ -27,6 +27,10 @@
 
 .logo {
   height: 3rem;
+  @media only screen and (max-width: 768px) {
+    padding-top: $m1;
+    margin-left: $m4;
+  }
 }
 
 .menu_button {

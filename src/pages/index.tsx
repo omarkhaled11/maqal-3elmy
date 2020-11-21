@@ -27,7 +27,7 @@ export const getStaticProps = async (ctx) => {
   const client = initContentfulService();
   const articles = await client.getArticles();
   const landingArticles = await client.getLandingPage();
-  console.log(landingArticles);
+
   return {
     props: {
       articles,

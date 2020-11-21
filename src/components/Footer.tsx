@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styles from './Footer.module.scss';
 
 const FACEBOOK_LINK =
-  'https://www.facebook.com/%D9%85%D9%82%D8%A7%D9%84-%D8%B9%D9%84%D9%85%D9%8A-109854060656506/';
-const LINKEDIN_LINK = 'https://www.linkedin.com/company/42876982/';
-const TWITTER_LINK = 'https://twitter.com/qNlEssc4yeVMrF9';
+  'https://www.facebook.com/MaqalElmy';
+const LINKEDIN_LINK = 'https://www.linkedin.com/company/maqalelmy';
+const TWITTER_LINK = 'https://twitter.com/maqalelmy';
 
 const Footer = ({ disciplines }) => {
   const naturalSciencesDisciplines = disciplines?.reduce(

@@ -8,9 +8,9 @@ import Link from 'next/link';
 const About = () => {
   return (
     <Layout>
-      <div className={styles.english_link}>
+      {/* <div className={styles.english_link}>
         <p>For English please click <Link href='/about-en'><a>here</a></Link></p>
-      </div>
+      </div> */}
       <Divider text='من نحن؟' />
       <div className={styles.text_container}>
         <p className={styles.text}>
